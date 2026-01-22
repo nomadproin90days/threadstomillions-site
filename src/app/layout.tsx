@@ -12,10 +12,10 @@ export const metadata: Metadata = {
     description: 'The proven roadmap to turn your content into conversions—without feeling spammy or salesy.',
     images: [
       {
-        url: 'https://threadstomillions.com/og-image-v4.jpg',
+        url: 'https://threadstomillions.com/og-image-v5.jpg',
         width: 1200,
         height: 630,
-        alt: 'Threads to Millions',
+        alt: 'Master the Threads Algorithm - ThreadsToMillions',
       },
     ],
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Threads to Millions - Grow and Monetize Your Threads Audience',
     description: 'The proven roadmap to turn your content into conversions—without feeling spammy or salesy.',
-    images: ['https://threadstomillions.com/og-image-v4.jpg'],
+    images: ['https://threadstomillions.com/og-image-v5.jpg'],
   },
 };
 
