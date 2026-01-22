@@ -53,9 +53,12 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button variant="hero" size="xl">
+            <a 
+              href="https://nomadproin90days.com/shop/d8beb61f-33df-4306-a897-87b3a1ffe197"
+              className="px-8 py-4 bg-[#5f8f93] hover:bg-[#6a9fa3] text-white rounded-full font-bold transition-all text-center shadow-lg shadow-[#5f8f93]/20"
+            >
               Join the Community
-            </Button>
+            </a>
             <Button variant="heroOutline" size="xl">
               Learn More
             </Button>

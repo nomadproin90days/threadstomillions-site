@@ -33,18 +33,13 @@ const CTASection = () => {
             Your journey to millions starts with a single step.
           </p>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Button variant="hero" size="xl" className="group">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <a 
+              href="https://nomadproin90days.com/shop/d8beb61f-33df-4306-a897-87b3a1ffe197"
+              className="px-8 py-4 bg-white text-[#1f1f1f] hover:bg-gray-100 rounded-full font-bold transition-all text-center shadow-lg"
+            >
               Join the Community
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </motion.div>
+            </a>
 
           <p className="text-sm text-muted-foreground mt-6">
             ✓ Cancel anytime · ✓ 30-day money-back guarantee · ✓ Instant access
