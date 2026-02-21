@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Sparkles, Target, MessageSquare, Bot, BookOpen, Users } from "lucide-react";
 
@@ -73,7 +75,7 @@ const FeaturesSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

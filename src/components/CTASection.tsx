@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -40,6 +42,7 @@ const CTASection = () => {
             >
               Join the Community
             </a>
+          </div>
 
           <p className="text-sm text-muted-foreground mt-6">
             ✓ Cancel anytime · ✓ 30-day money-back guarantee · ✓ Instant access

@@ -1,18 +1,15 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroOcean from "@/assets/hero-ocean.jpg"; // This will be handled later
-
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroOcean.src})` }} // Use .src for Next.js Image import
-      />
-      
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a1118]">
+      {/* Background Gradient instead of broken image */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1118] via-[#0f1d2a] to-[#0a1118]" aria-hidden="true" />
+
       {/* Overlay */}
-      <div className="absolute inset-0 ttm-hero-overlay" />
+      <div className="absolute inset-0 ttm-hero-overlay" aria-hidden="true" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
@@ -29,7 +26,7 @@ const HeroSection = () => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-card/50 backdrop-blur-sm mb-8"
           >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
             <span className="text-sm text-muted-foreground">Join 10,000+ Creators Growing on Threads</span>
           </motion.div>
 
@@ -59,8 +56,8 @@ const HeroSection = () => {
             >
               Join the Community
             </a>
-            <Button variant="heroOutline" size="xl">
-              Learn More
+            <Button variant="heroOutline" size="xl" asChild>
+              <a href="#strategy">Learn More</a>
             </Button>
           </motion.div>
         </motion.div>
@@ -71,6 +68,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          aria-hidden="true"
         >
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
             <span className="text-xs uppercase tracking-widest">Scroll</span>

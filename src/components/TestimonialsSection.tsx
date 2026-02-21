@@ -1,34 +1,36 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    handle: " @sarahcreates",
-    avatar: "SM",
-    content: "TTM completely transformed my approach to Threads. I went from 200 to 15K followers in 3 months and launched my first digital product that generated $12K in the first week!",
+    name: "Chloe",
+    handle: "@chloedigitally",
+    avatar: "C",
+    content: "I invested in TTM 10 weeks ago. I've sold it 47 times — turning $47 into $1,539.20. Gained 2,126 followers and massive leads, reach, and connections. On sale today only $10 off!!",
     role: "Digital Creator",
   },
   {
-    name: "Marcus Chen",
-    handle: " @marcusbuilds",
-    avatar: "MC",
-    content: "The ThreadyBot alone is worth the investment. But combined with the community and strategies? It's a no-brainer. I've 10x'd my engagement and finally feel confident selling.",
-    role: "SaaS Founder",
+    name: "Sav",
+    handle: "@digitalwithsav",
+    avatar: "S",
+    content: "I invested in Threads to Millions & this happened... 500+ new followers, sold it 16 times, and over 170K views!!! I will never shut up about it.",
+    role: "Digital Creator",
   },
   {
-    name: "Elena Rodriguez",
-    handle: " @elenaflows",
-    avatar: "ER",
-    content: "I was skeptical at first, but the results speak for themselves. The weekly calls and community support kept me accountable. Now I'm making a full-time income from my content.",
-    role: "Content Strategist",
+    name: "Kalinah",
+    handle: "@kickitwith.kalinah",
+    avatar: "K",
+    content: "Threads to Millions really is that girl! Almost 50k views, over 200 Threads, and a few potential leads in less than 2 weeks? Wild.",
+    role: "Digital Creator",
   },
   {
-    name: "James Park",
-    handle: " @jamesparkhq",
-    avatar: "JP",
-    content: "Finally, a program that doesn't feel salesy. The strategies are authentic, the community is supportive, and the results are real. Best investment I've made in my creator journey.",
-    role: "Newsletter Writer",
+    name: "The Digital Powerhouse",
+    handle: "@thedigitalpowerhouse",
+    avatar: "DP",
+    content: "THIS IS INSANEEE. Months of using proven strategies and I just hit 1.0M total views on Threads. The results speak for themselves.",
+    role: "Threads Creator",
   },
 ];
 
@@ -51,7 +53,7 @@ const TestimonialsSection = () => {
             <span className="ttm-gradient-text">Results</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what our community members have to say.
+            Real members. Real handles. Real results you can verify on Threads.
           </p>
         </motion.div>
 
