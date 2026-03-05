@@ -523,7 +523,7 @@ The creators who struggle on Threads are the ones posting random content without
     slug: 'posting-blueprint',
     title: 'The Threads Posting Blueprint: When, How Often, and What to Post',
     description:
-      'The exact posting schedule, frequency, and content mix that maximizes your Threads growth. Based on data from 10,000+ community members.',
+      'The exact posting schedule, frequency, and content mix that maximizes your Threads growth. Based on data from our 5,200+ member community.',
     date: '2026-01-30',
     readTime: '8 min read',
     category: 'Content Strategy',
@@ -667,7 +667,7 @@ Community-based monetization is one of the most sustainable models because it ge
 
 **How to sell on Threads:** Your public Threads content is the "free sample." You show people what you know, build trust, and then offer deeper access through your community. The pitch is simple: "If you like my free content, imagine what you get in the community where I hold nothing back."
 
-Threads to Millions is an example of this model in action — over 10,000 members pay for access to deeper strategies, live calls, tools, and the community itself.
+Threads to Millions is an example of this model in action — over 5,200 members pay for access to deeper strategies, live calls, tools, and the community itself.
 
 ## Method 4: Affiliate Marketing
 
@@ -1398,7 +1398,7 @@ Creators with deep expertise sell their time and knowledge directly. This includ
 
 Paid communities on platforms like Skool generate recurring revenue from members who pay monthly for access to content, community, and support.
 
-**Real example:** Threads to Millions itself is a community of over 10,000 members, demonstrating that this model can scale significantly when built on genuine value.
+**Real example:** Threads to Millions itself is a community of over 5,200 members, demonstrating that this model can scale significantly when built on genuine value.
 
 ### Revenue Source 4: Affiliate and Sponsorship Revenue ($200 to $5,000+/month)
 
@@ -1533,12 +1533,12 @@ The question is not whether Threads "failed." The question is whether you will b
     slug: 'star-method-explained',
     title: 'The STAR Method Explained: The 4-Step System for Threads Success',
     description:
-      'A deep dive into the STAR Method — the proven 4-step framework that has helped 10,000+ creators grow and monetize on Threads without feeling salesy.',
+      'A deep dive into the STAR Method — the proven 4-step framework that has helped 5,200+ creators grow and monetize on Threads without feeling salesy.',
     date: '2026-02-18',
     readTime: '11 min read',
     category: 'Strategy',
     keywords: ['STAR Method', 'Threads strategy', 'Threads to Millions', 'Threads growth framework', 'how to grow on Threads'],
-    content: `The STAR Method is the core framework taught in the Threads to Millions community. It is the system that has helped over 10,000 creators build audiences and generate revenue on Threads — many of them starting from zero.
+    content: `The STAR Method is the core framework taught in the Threads to Millions community. It is the system that has helped over 5,200 creators build audiences and generate revenue on Threads — many of them starting from zero.
 
 Unlike generic social media advice that tells you to "post consistently" or "engage with your audience" (both true but not actionable), the STAR Method gives you a specific, repeatable process. Each letter represents a principle that, when followed in combination, creates a sustainable Threads business.
 
@@ -1663,7 +1663,7 @@ Throughout the entire week, you are spending most of your time on engagement (th
 
 The STAR Method works because it aligns with how people actually make purchasing decisions on social media. They follow people they connect with (Story), trust people who help them (Teach), engage with people who engage with them (80/20 Rule), and buy from people who do not pressure them (Downthread Sell).
 
-Over 10,000 creators in the Threads to Millions community are using some version of this system. The community has generated over $2 million in collective revenue. Individual creators have gone from zero to five-figure monthly income.
+Over 5,200 creators in the Threads to Millions community are using some version of this system. Individual creators have reported going from zero to five-figure monthly income.
 
 The STAR Method is not a hack or a shortcut. It is a sustainable system for building a real business on Threads.`,
   },

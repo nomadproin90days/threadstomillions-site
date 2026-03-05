@@ -58,8 +58,8 @@ const HeroSection = () => {
             />
             {/* Overlay Metric Badge */}
             <div className="absolute bottom-10 left-10 bg-white p-4 rounded-xl border border-[var(--border)] shadow-lg max-w-[200px]">
-              <div className="font-mono text-[var(--success)] font-semibold mb-1">+142% Uplift</div>
-              <div className="text-micro text-[var(--muted-foreground)]">Avg Reply Rate</div>
+              <div className="font-mono text-[var(--success)] font-semibold mb-1">5,200+</div>
+              <div className="text-micro text-[var(--muted-foreground)]">Active Members on Skool</div>
             </div>
           </motion.div>
 

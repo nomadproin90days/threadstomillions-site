@@ -27,7 +27,7 @@ export default function FreeLeadMagnet() {
                 The <span className="ttm-gradient-text">7-Figure</span> Threads Blueprint
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Stop guessing and start growing. Get the exact framework Lexie used to go from 0 to 100k+ followers and generate $2M+ in community revenue.
+                Stop guessing and start growing. Get the framework Lexie uses to grow on Threads and help 5,200+ community members do the same.
               </p>
               
               <div className="space-y-4 mb-10">
@@ -119,7 +119,7 @@ export default function FreeLeadMagnet() {
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">Ready to stop shouting into the void?</h2>
           <p className="text-lg text-muted-foreground mb-10">
-            Join the community of 10,000+ creators who have already mastered the algorithm. Download the free guide today.
+            Join the community of 5,200+ creators learning to grow and monetize on Threads.
           </p>
           <a href="https://nomadproin90days.com/shop/d8beb61f-33df-4306-a897-87b3a1ffe197">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 h-16 rounded-full text-xl shadow-xl shadow-primary/30">
