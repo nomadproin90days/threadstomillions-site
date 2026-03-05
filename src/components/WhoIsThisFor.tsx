@@ -1,66 +1,66 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, X } from "lucide-react";
 
-const WhoIsThisFor = () => {
+export const WhoIsThisFor = () => {
   return (
-    <section className="py-24 lg:py-32 bg-slate-50 border-y border-slate-100">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-20">
-            
-            <motion.div
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl md:text-5xl mb-10 italic">This is for you if...</h2>
-              <div className="space-y-8">
-                {[
-                  { title: "Creators", desc: "Getting engagement but no sales." },
-                  { title: "Service Providers", desc: "Who want inbound leads from Threads." },
-                  { title: "Consultants", desc: "That need a repeatable content-to-conversion process." }
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <Check className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
-                      <p className="text-slate-600">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-10 bg-white border border-slate-200"
-            >
-              <h2 className="text-3xl mb-6 italic text-slate-400">Not for everyone</h2>
-              <p className="text-slate-500 leading-relaxed mb-8">
-                This is an operational business system. We are likely not the right fit if you are:
-              </p>
-              <ul className="space-y-4">
-                {[
-                  "Looking for overnight virality with zero effort.",
-                  "Unwilling to engage in real conversations.",
-                  "Searching for a 'hack' rather than a system."
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-400 text-sm">
-                    <X className="w-4 h-4 text-slate-300 mt-0.5 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
-          </div>
+    <section className="py-24 md:py-32 bg-[var(--background)]">
+      <div className="editorial-container">
+        
+        <div className="mb-16 text-center md:text-left">
+          <h2 className="text-h2 mb-4">Who This Is For</h2>
+          <p className="text-body-l text-[var(--muted-foreground)] max-w-2xl">
+            This is an operational business system. It works best for these three profiles.
+          </p>
         </div>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {[
+            { 
+              title: "Creators", 
+              desc: "You get engagement and views, but struggle to turn that attention into consistent sales or newsletter subscribers."
+            },
+            { 
+              title: "Coaches & Consultants", 
+              desc: "You want a predictable way to generate inbound, high-ticket leads without relying on paid ads." 
+            },
+            { 
+              title: "Service Businesses", 
+              desc: "You need a repeatable daily content-to-conversion process to establish authority in your niche." 
+            }
+          ].map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: i * 0.05 }}
+              className="editorial-card"
+            >
+              <div className="text-h3 mb-3">{item.title}</div>
+              <p className="text-body text-[var(--muted-foreground)]">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45, delay: 0.2 }}
+          className="bg-[var(--surface)] border border-[var(--warning)]/30 rounded-[var(--radius-card)] p-8 md:p-10 flex flex-col md:flex-row items-center gap-6"
+        >
+          <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--warning)]/10 flex items-center justify-center text-[var(--warning)] font-serif text-2xl italic">
+            !
+          </div>
+          <div>
+            <h3 className="text-[20px] font-semibold text-[var(--foreground)] mb-2">Not for everyone</h3>
+            <p className="text-body text-[var(--muted-foreground)]">
+              This is not for people looking for overnight virality with zero effort, or creators who are unwilling to execute a daily operational checklist.
+            </p>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

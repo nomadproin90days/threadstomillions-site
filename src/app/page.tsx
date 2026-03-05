@@ -1,37 +1,37 @@
 "use client";
 
 import Navbar from '../components/Navbar';
+import { TrustStrip } from '../components/TrustStrip';
 import HeroSection from '../components/HeroSection';
+import { ProofRow } from '../components/ProofRow';
 import WhoIsThisFor from '../components/WhoIsThisFor';
-import ProblemSection from '../components/ProblemSection';
-import RoadmapSection from '../components/RoadmapSection';
+import MethodSection from '../components/MethodSection';
+import CurriculumSection from '../components/CurriculumSection';
 import ResultsSection from '../components/ResultsSection';
-import VideoShowcase from '../components/VideoShowcase';
 import AboutCreator from '../components/AboutCreator';
 import FAQSection from '../components/FAQSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
-import SkoolTrustRibbon from '../components/SkoolTrustRibbon';
 
 const Home = () => {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[var(--background)] selection:bg-[var(--primary)] selection:text-white">
+      <TrustStrip />
       <Navbar />
       
       <div className="space-y-0">
         <HeroSection />
+        <ProofRow />
         <WhoIsThisFor />
-        <ProblemSection />
-        <RoadmapSection />
+        <MethodSection />
+        <CurriculumSection />
         <ResultsSection />
-        <VideoShowcase />
         <AboutCreator />
         <FAQSection />
         <CTASection />
       </div>
       
       <Footer />
-      <SkoolTrustRibbon />
     </main>
   );
 };

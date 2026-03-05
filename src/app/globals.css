@@ -1,48 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 @layer base {
   :root {
-    /* Editorial Trust System - Light Theme */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%; /* Deep Navy */
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* Brand Feel: Editorial, credible, calm, premium */
+    --background: #F7F7F5;
+    --surface: #FFFFFF;
     
-    --ttm-trust-emerald: 142.1 76.2% 36.3%;
+    --foreground: #161616;
+    --muted-foreground: #5E5E5E;
+    
+    --border: #E6E4DF;
+    
+    /* Trust Green */
+    --primary: #1F6B5C;
+    --primary-hover: #19584C;
+    --primary-foreground: #FFFFFF;
+
+    /* Warm Proof Accent */
+    --accent: #B08968;
+    --accent-foreground: #FFFFFF;
+
+    --success: #1E8E5A;
+    --warning: #B45309;
+
+    --radius-card: 14px;
+    --radius-button-primary: 999px;
+    --radius-button-secondary: 10px;
+    
+    /* Default Shadows */
+    --shadow-default: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-hover: 0 8px 24px rgba(0,0,0,0.08);
   }
 }
 
 @layer base {
   * {
-    border-color: hsl(var(--border));
+    border-color: var(--border);
   }
 
   html {
@@ -50,28 +46,63 @@
   }
 
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    background-color: var(--background);
+    color: var(--foreground);
     @apply antialiased;
     font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Instrument Serif', serif;
-    @apply font-normal tracking-tight;
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--foreground);
   }
 }
 
 @layer components {
-  .editorial-container {
-    @apply max-w-5xl mx-auto px-6;
+  /* Strict Typography Scale */
+  .text-h1 {
+    @apply text-[40px] leading-[46px] md:text-[56px] md:leading-[60px] font-medium;
   }
-  
-  .trust-badge {
-    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-xs font-medium;
+  .text-h2 {
+    @apply text-[32px] leading-[38px] md:text-[40px] md:leading-[46px] font-medium;
+  }
+  .text-h3 {
+    @apply text-[24px] leading-[30px] md:text-[28px] md:leading-[34px] font-semibold;
+  }
+  .text-body-l {
+    @apply text-[18px] leading-[28px] md:text-[20px] md:leading-[30px] font-normal;
+  }
+  .text-body {
+    @apply text-[16px] leading-[26px] font-normal;
+  }
+  .text-small {
+    @apply text-[14px] leading-[22px] font-medium;
+  }
+  .text-micro {
+    @apply text-[12px] leading-[16px] font-semibold tracking-[0.06em] uppercase;
   }
 
-  .ttm-gradient-text {
-    @apply text-slate-900; /* Removing gradients in editorial mode for clarity */
+  /* Monospace for metrics */
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Structural Container */
+  .editorial-container {
+    @apply max-w-[1200px] mx-auto px-5 md:px-10;
+  }
+  .reading-container {
+    @apply max-w-[720px] mx-auto;
+  }
+
+  /* Card Base */
+  .editorial-card {
+    @apply bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-card)] p-6 transition-all duration-300;
+    box-shadow: var(--shadow-default);
+  }
+  .editorial-card:hover {
+    box-shadow: var(--shadow-hover);
   }
 }

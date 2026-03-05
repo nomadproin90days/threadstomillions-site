@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { NOMAD_URL } from "@/lib/constants";
 import { useSearchParams } from "@/lib/useSearchParams";
 
@@ -10,60 +9,61 @@ const HeroSection = () => {
   const searchParams = useSearchParams();
 
   return (
-    <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 bg-white">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+    <section className="pt-40 pb-20 md:pt-48 md:pb-24 bg-[var(--background)]">
+      <div className="editorial-container">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
+          {/* Left: Copy */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.45, ease: "easeOut" }}
+            className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-200 mb-8">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500">Verified 2026 Strategy</span>
-            </div>
-
-            <h1 className="text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9] text-slate-950 italic">
+            <h1 className="text-h1 text-[var(--foreground)] mb-6">
               Turn Threads Into Qualified Leads in 30 Days
             </h1>
-
-            <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-              A step-by-step system for creators and service businesses to grow an audience and convert without spammy posts.
+            
+            <p className="text-body-l text-[var(--muted-foreground)] mb-10 max-w-lg">
+              A step-by-step system for creators and service businesses to grow audience, start real conversations, and convert without spammy posts.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <a href={`${NOMAD_URL}${searchParams}`} className="w-full sm:w-auto">
-                <Button size="lg" className="h-14 px-10 text-lg bg-slate-950 text-white hover:bg-slate-800 rounded-none w-full font-medium transition-all">
+                <button className="w-full sm:w-auto bg-[var(--primary)] text-white px-8 py-4 rounded-[var(--radius-button-primary)] font-semibold text-[15px] hover:bg-[var(--primary-hover)] hover:-translate-y-[1px] transition-all flex items-center justify-center gap-2 shadow-sm">
                   See How It Works
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                  <ArrowRight size={18} />
+                </button>
               </a>
               <a href="#results" className="w-full sm:w-auto">
-                <Button size="lg" variant="ghost" className="h-14 px-10 text-lg text-slate-600 hover:text-slate-950 w-full font-medium italic">
+                <button className="w-full sm:w-auto bg-transparent border border-[var(--border)] text-[var(--foreground)] px-8 py-4 rounded-[var(--radius-button-secondary)] font-semibold text-[15px] hover:bg-[#F0EFEC] transition-colors">
                   View Real Results
-                </Button>
+                </button>
               </a>
             </div>
+          </motion.div>
 
-            {/* Proof Strip - Ultra Clean */}
-            <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-4 pt-12 border-t border-slate-100 text-slate-400 text-xs font-medium uppercase tracking-[0.2em]">
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-emerald-500" />
-                <span>10,000+ Members</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-emerald-500" />
-                <span>Verified Case Studies</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-emerald-500" />
-                <span>30-Day Guarantee</span>
-              </div>
+          {/* Right: Proof Visual */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.05, ease: "easeOut" }}
+            className="relative lg:h-[600px] w-full rounded-2xl overflow-hidden border border-[var(--border)] bg-[var(--surface)] shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex items-center justify-center p-6"
+          >
+            {/* Using Lexie's image for now to represent the real proof visual instead of abstract gradients */}
+            <img 
+              src="/Lexie.jpg" 
+              alt="Lexie - Threads to Millions Creator" 
+              className="w-full h-full object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700"
+            />
+            
+            {/* Overlay Metric Badge */}
+            <div className="absolute bottom-10 left-10 bg-white p-4 rounded-xl border border-[var(--border)] shadow-lg max-w-[200px]">
+              <div className="font-mono text-[var(--success)] font-semibold mb-1">+142% Uplift</div>
+              <div className="text-micro text-[var(--muted-foreground)]">Avg Reply Rate</div>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

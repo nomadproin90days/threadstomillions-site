@@ -1,95 +1,93 @@
 "use client";
 
 import Link from 'next/link';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import { NOMAD_URL } from '@/lib/constants';
 import { useSearchParams } from '@/lib/useSearchParams';
-import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import { useState, useEffect } from 'react';
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const searchParams = useSearchParams();
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'The Strategy', href: '/#strategy' },
-    { name: 'Inside TTM', href: '/#features' },
-    { name: 'Results', href: '/#testimonials' },
-    { name: 'Free Guide', href: '/free-lead-magnet' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Method', href: '#method' },
+    { name: 'Results', href: '#results' },
+    { name: 'Curriculum', href: '#curriculum' },
+    { name: 'FAQ', href: '#faq' },
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/80 backdrop-blur-md border-b border-border py-3' : 'bg-transparent py-5'
+    <header 
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-surface/90 backdrop-blur-md border-b border-border shadow-sm py-4' : 'bg-transparent py-6'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-display text-xl md:text-2xl font-bold uppercase tracking-tighter">
-            Threads<span className="text-primary italic">To</span>Millions
-          </span>
+      <div className="editorial-container flex justify-between items-center">
+        {/* Wordmark */}
+        <Link href="/" className="font-heading text-[22px] tracking-tight text-foreground hover:text-primary transition-colors">
+          Threads to Millions
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
+        <nav className="hidden md:flex items-center gap-8">
+          <div className="flex gap-6 text-small text-muted-foreground">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                href={link.href}
+                className="hover:text-foreground transition-colors"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+          
           <a href={`${NOMAD_URL}${searchParams}`}>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold rounded-full px-6">
-              Join Now
-            </Button>
+            <button className="bg-primary text-primary-foreground px-6 py-3 rounded-full text-[15px] font-semibold hover:bg-primary-hover transition-all hover:-translate-y-[1px]">
+              Start
+            </button>
           </a>
-        </div>
+        </nav>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-foreground"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          className="md:hidden text-foreground p-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border p-6 flex flex-col gap-6 animate-in slide-in-from-top-5 duration-200">
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-surface border-b border-border py-4 px-6 shadow-lg flex flex-col gap-4">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-lg font-medium text-foreground hover:text-primary"
-              onClick={() => setIsOpen(false)}
+              className="text-body font-medium text-foreground py-2 border-b border-border"
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
             </Link>
           ))}
-          <a href={`${NOMAD_URL}${searchParams}`}>
-            <Button className="w-full bg-primary text-primary-foreground font-bold py-6 rounded-xl">
-              Join the Community
-            </Button>
+          <a href={`${NOMAD_URL}${searchParams}`} className="mt-4">
+            <button className="w-full bg-primary text-primary-foreground py-4 rounded-full font-semibold">
+              Start the System
+            </button>
           </a>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 
