@@ -1,51 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap');
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
 @layer base {
   :root {
-    /* Threads to Millions - Dark Ocean Theme (Refined) */
-    --background: 220 25% 7%;
-    --foreground: 210 20% 95%;
+    /* Threads to Millions - Dark Ocean (Slate 950) Theme */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 220 20% 11%;
-    --card-foreground: 210 20% 95%;
+    --card: 222.2 70% 8%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    /* Vibrant Teal Primary */
-    --primary: 172 55% 48%;
-    --primary-foreground: 220 25% 7%;
+    /* Electric Blue Primary */
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 220 15% 16%;
-    --secondary-foreground: 210 20% 95%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 15% 14%;
-    --muted-foreground: 210 12% 68%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 172 45% 42%;
-    --accent-foreground: 210 20% 95%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    /* Warm Gold Accent - for CTAs and money stats */
-    --ttm-gold: 38 90% 58%;
-    --ttm-gold-hover: 38 85% 52%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 210 20% 95%;
-
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 172 55% 48%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217.2 91.2% 59.8%;
 
     --radius: 0.75rem;
 
     /* Custom TTM tokens */
-    --ttm-gradient-start: 172 55% 50%;
-    --ttm-gradient-end: 190 50% 38%;
-    --ttm-overlay: 220 30% 5%;
-    --ttm-glow: 172 60% 50%;
+    --ttm-gradient-start: 217.2 91.2% 59.8%;
+    --ttm-gradient-end: 190 50% 35%;
+    --ttm-overlay: 222.2 84% 4.9%;
+    --ttm-glow: 217.2 91.2% 59.8%;
   }
 }
 
@@ -62,11 +58,11 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     @apply antialiased;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Oswald', sans-serif;
     @apply font-bold tracking-tight;
   }
 }
@@ -74,12 +70,7 @@
 @layer components {
   .ttm-gradient-text {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--ttm-gradient-end)));
-  }
-
-  .ttm-gold-gradient-text {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--ttm-gold)), hsl(38, 80%, 48%));
+    background-image: linear-gradient(135deg, hsl(var(--primary)), #0ea5e9);
   }
 
   .ttm-gradient-border {
@@ -94,7 +85,7 @@
     inset: 0;
     padding: 1px;
     border-radius: var(--radius);
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.5), hsl(var(--ttm-gradient-end) / 0.3));
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.5), #0ea5e9 / 0.3);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
@@ -112,29 +103,6 @@
       hsl(var(--ttm-overlay) / 0.85) 50%,
       hsl(var(--background)) 100%
     );
-  }
-
-  /* Gold CTA button */
-  .ttm-cta {
-    background: linear-gradient(135deg, hsl(var(--ttm-gold)), hsl(38, 80%, 50%));
-    color: hsl(220, 25%, 7%);
-    font-weight: 700;
-    border-radius: 9999px;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 20px -4px hsl(var(--ttm-gold) / 0.4);
-  }
-
-  .ttm-cta:hover {
-    background: linear-gradient(135deg, hsl(var(--ttm-gold-hover)), hsl(38, 75%, 46%));
-    box-shadow: 0 6px 28px -4px hsl(var(--ttm-gold) / 0.5);
-    transform: translateY(-1px);
-  }
-
-  /* Sticky mobile CTA */
-  .ttm-sticky-cta {
-    @apply fixed bottom-0 left-0 right-0 z-50 p-3 backdrop-blur-lg;
-    background: hsl(var(--background) / 0.9);
-    border-top: 1px solid hsl(var(--border));
   }
 }
 

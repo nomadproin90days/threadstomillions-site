@@ -251,13 +251,12 @@ export default function RootLayout({
             alt=""
           />
         </noscript>
-        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-body antialiased">
         {children}
         <Analytics />
       </body>

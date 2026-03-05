@@ -1,114 +1,97 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { NOMAD_URL } from "@/lib/constants";
+import { Button } from "@/components/ui/button";
+import CountUp from "./CountUp";
+import { ArrowRight, CheckCircle2, Users, BookOpen } from "lucide-react";
+import PoweredBySkoolBadge from "./PoweredBySkoolBadge";
+import Link from "next/link";
 import { useSearchParams } from "@/lib/useSearchParams";
+import { NOMAD_URL } from "@/lib/constants";
 
 const HeroSection = () => {
   const searchParams = useSearchParams();
+  
+  const beaconsUrl = "https://shop.beacons.ai/getdigitalwithlexie/667ae82f-c456-49c1-9f74-c8f5c67f4125?affiliateKey=gAAAAABnCEpLfBMIqiGJRCnDyUWYR9mExKxCbYvi7t5Ml3WP3bWOHdsI7HvjwAyE43YUtgv5yktpewVCrnSCD4qXXOTTQWYYIhejXl6Pner-19KAoafAMrg4wicNHMHsIm_1_nbV9_DaPNNrAhAGy21DCHMU0bE9ybpNoFxzo8Y_RLaPk799PI3Lb-SC_aEIELPsNUaot815ntH3gtNskEqT0AJA2c3WPg%3D%3D";
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a1118]">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1118] via-[#0f1d2a] to-[#0a1118]" aria-hidden="true" />
-      <div className="absolute inset-0 ttm-hero-overlay" aria-hidden="true" />
+    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-[100px]" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px]" />
+      </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-20 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto"
-        >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-card/50 backdrop-blur-sm mb-8"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" aria-hidden="true" />
-            <span className="text-sm text-muted-foreground">Join 10,000+ Creators Growing on Threads</span>
-          </motion.div>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
 
-          {/* Main Headline */}
-          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl leading-tight mb-6 text-balance">
-            Turn Your{" "}
-            <span className="ttm-gradient-text">Threads</span>
-            <br />
-            Into a Business
+          {/* Trust Pill */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-slate-800 backdrop-blur-sm mb-8 animate-fade-in">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-sm font-medium text-slate-300">
+              <span className="font-bold text-white">5,100+</span> creators are active right now
+            </span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-8 leading-tight animate-fade-in [animation-delay:200ms]">
+            The #1 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Threads Growth & Monetization</span> System
           </h1>
 
-          {/* Sub-headline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 font-light leading-relaxed">
-            The proven roadmap to turn your content into conversions — without feeling spammy or salesy.
+          <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed animate-fade-in [animation-delay:400ms]">
+            Stop posting into the void. Join 5,100+ creators using our proven 17-lesson system to turn attention into income on the world's fastest-growing app.
           </p>
 
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
-          >
-            <a
-              href={`${NOMAD_URL}${searchParams}`}
-              className="ttm-cta px-8 py-4 text-base md:text-lg text-center"
-            >
-              Start Growing on Threads
-            </a>
-            <a
-              href="#strategy"
-              className="px-8 py-4 border border-primary/30 text-primary hover:bg-primary/10 rounded-full font-medium transition-all text-center text-base"
-            >
-              See the Method
-            </a>
-          </motion.div>
+          <div className="flex flex-col items-center gap-6 animate-fade-in [animation-delay:600ms]">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+              <a
+                href={`${beaconsUrl}${searchParams}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
+                <Button size="lg" className="h-14 px-8 text-lg bg-white text-slate-900 hover:bg-slate-200 rounded-full w-full shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                  Join Threads to Millions
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
 
-          {/* Social Proof Stats Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex flex-wrap justify-center gap-8 md:gap-12"
-          >
-            {[
-              { number: "10K+", label: "Active Members" },
-              { number: "$2M+", label: "Revenue Generated" },
-              { number: "500%", label: "Avg. Growth Rate" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="font-heading text-2xl md:text-3xl font-bold ttm-gold-gradient-text">
-                  {stat.number}
-                </div>
-                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider mt-1">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
+              <a
+                href={`${NOMAD_URL}${searchParams}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto"
+              >
+                <Button size="lg" variant="outline" className="h-14 px-8 text-lg border-slate-700 text-slate-300 hover:bg-slate-800 hover:text-white rounded-full w-full">
+                  FREE GROWTH STRATEGY
+                </Button>
+              </a>
+            </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          aria-hidden="true"
-        >
-          <div className="flex flex-col items-center gap-2 text-muted-foreground">
-            <span className="text-xs uppercase tracking-widest">Scroll</span>
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-              className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2"
-            >
-              <div className="w-1 h-2 rounded-full bg-primary" />
-            </motion.div>
+            <Link href="/blog" className="w-full sm:w-auto">
+              <Button size="lg" variant="ghost" className="h-12 px-8 text-base text-primary hover:text-primary/80 hover:bg-primary/10 rounded-full w-full group">
+                <BookOpen className="mr-2 h-5 w-5" />
+                VIEW FULL CURRICULUM
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
-        </motion.div>
+
+          <p className="mt-6 text-sm text-slate-500 animate-fade-in [animation-delay:700ms]">
+            Instant Access • Join 5,100+ Members • Cancel Anytime
+          </p>
+
+          {/* Social Proof Bar */}
+          <div className="mt-16 pt-8 border-t border-slate-800/50 flex flex-wrap justify-center items-center gap-x-12 gap-y-4 animate-fade-in [animation-delay:800ms]">
+            <div className="flex items-center gap-2 text-slate-400">
+              <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+              <span>Proven Templates</span>
+            </div>
+            <div className="flex items-center gap-2 text-slate-400">
+              <Users className="w-5 h-5 text-blue-500" />
+              <span>5.1k+ Members</span>
+            </div>
+            <PoweredBySkoolBadge theme="dark" variant="primary" />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,122 +1,212 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
-
-const faqs = [
-  {
-    question: "What is Threads to Millions?",
-    answer:
-      "TTM is a community and course created by Lexie (@getdigitalwithlexie) that teaches creators how to grow their audience and monetize on the Threads social media platform. It includes step-by-step courses, weekly live calls, AI-powered tools like ThreadyBot, and a private community of over 10,000 members.",
-  },
-  {
-    question: "What is the STAR Method?",
-    answer:
-      "The STAR Method is our core methodology. Story First (lead with your personal transformation), Teach for Free (give your best advice without asking), 80/20 Engagement Rule (spend 80% engaging, 20% posting), and Sell in the Downthread (hook first, offer naturally in replies).",
-  },
-  {
-    question: "Can you really make money on Threads?",
-    answer:
-      "Yes. TTM members have collectively generated over $2 million in revenue. Lexie earns 5 figures a month from Threads. The community teaches proven strategies for monetizing through content creation and authentic engagement.",
-  },
-  {
-    question: "How much does Threads to Millions cost?",
-    answer:
-      "TTM offers flexible membership options with a 30-day money-back guarantee. You can cancel anytime and get instant access to all courses, the private community, weekly live calls, and the ThreadyBot AI assistant.",
-  },
-  {
-    question: "Do I need a large following to get started?",
-    answer:
-      "Not at all. Lexie started without a massive following or a marketing degree. The strategies are designed for creators at any level. Members have seen an average of 500% growth in their Threads following.",
-  },
-];
-
-const FAQItem = ({
-  faq,
-  isOpen,
-  onToggle,
-}: {
-  faq: (typeof faqs)[0];
-  isOpen: boolean;
-  onToggle: () => void;
-}) => {
-  return (
-    <div className="border-b border-border last:border-b-0">
-      <button
-        onClick={onToggle}
-        className="w-full flex items-center justify-between py-5 text-left group"
-        aria-expanded={isOpen}
-      >
-        <span className="font-heading text-lg font-semibold text-foreground pr-4 group-hover:text-primary transition-colors">
-          {faq.question}
-        </span>
-        <ChevronDown
-          className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <p className="pb-5 text-muted-foreground leading-relaxed">
-              {faq.answer}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const FAQSection = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  // Structured Data for Google Rich Results
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can you see who views your Threads profile?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, Threads does not currently allow you to see a list of users who view your profile. However, you can track engagement (likes, replies, reposts) to measure your reach."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will Threads be monetized? Can I make money?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but not through a Creator Fund. The most profitable way to monetize Threads is by funneling attention to owned assets like a newsletter, digital product, or Skool community."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the Threads algorithm work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Threads algorithm prioritizes conversational depth. Unlike Instagram (visuals) or X (news), Threads promotes posts that generate replies and back-and-forth dialogue."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Threads linked to Instagram permanently?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your Threads account is tied to your Instagram login, but Meta has introduced features to allow you to deactivate or delete your Threads profile separately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I delete my Threads account without deleting Instagram?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Go to Settings > Account > Deactivate or Delete Profile. You can now choose to delete your Threads profile specifically without affecting your Instagram account."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why did Threads 'fail' initially (and why is it back)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Threads saw a drop in 2023 because it lacked key features. It has since 'bounced back' because users are leaving X (Twitter) for a more positive, professional environment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Threads vs Twitter (X): Which is better for business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For Community Building, Lifestyle, and Education, Threads is superior. It has higher engagement rates and a less 'hostile' environment than X."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best time to post on Threads?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data suggests the Evening (6pm - 10pm) is the golden window. Threads is a 'leisure' app where people go to chat after work."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you message people on Threads (DMs)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Threads integrates with Instagram DMs. When you message someone on Threads, it goes to their Instagram inbox, keeping all conversations in one place."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who owns Threads and is my data safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Threads is owned by Meta (Instagram/Facebook). It adheres to the same enterprise-grade security and privacy standards as Instagram."
+        }
+      }
+    ]
+  };
 
   return (
-    <section className="py-24 md:py-32 relative">
-      <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-heading text-3xl md:text-4xl mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-muted-foreground">
-              Everything you need to know before joining.
-            </p>
-          </motion.div>
+    <section className="py-24 bg-background relative overflow-hidden" id="faq">
+      {/* Inject Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      
+      {/* Subtle Background Glow */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10" />
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="rounded-2xl bg-card border border-border p-6 md:p-8"
-          >
-            {faqs.map((faq, index) => (
-              <FAQItem
-                key={faq.question}
-                faq={faq}
-                isOpen={openIndex === index}
-                onToggle={() =>
-                  setOpenIndex(openIndex === index ? null : index)
-                }
-              />
-            ))}
-          </motion.div>
+      <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl mb-4">
+            Frequently Asked <span className="text-primary">Questions</span>
+          </h2>
+          <p className="text-lg text-slate-400 font-medium">
+            Answers to the most searched questions about the Threads app in 2026.
+          </p>
         </div>
+
+        <Accordion type="single" collapsible className="w-full space-y-4">
+          <AccordionItem value="item-1" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              1. Can you see who views your Threads profile?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              No, Threads does not currently allow you to see a list of users who view your profile. However, you can track **engagement** (likes, replies, reposts) to measure your reach. Our course teaches you how to interpret these signals to find your "silent" audience.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-2" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              2. Will Threads be monetized? Can I make money?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              Yes, but not through a "Creator Fund" like TikTok. The most profitable way to monetize Threads is by funneling attention to **owned assets** (like a newsletter, digital product, or Skool community). This allows you to control your income regardless of algorithm changes.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-3" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              3. How does the Threads algorithm work?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              The Threads algorithm prioritizes **conversational depth**. Unlike Instagram (visuals) or X (news), Threads promotes posts that generate replies and back-and-forth dialogue. Posting questions and engaging in comments is the #1 way to grow.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-4" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              4. Are Threads linked to Instagram permanently?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              Your Threads account is tied to your Instagram login, which is a huge advantage for growth (you bring your followers with you). However, Meta has introduced features to allow you to deactivate or delete your Threads profile *separately* from your Instagram account if you choose.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-5" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              5. How do I delete my Threads account without deleting Instagram?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              Go to <strong>Settings {'>'} Account {'>'} Deactivate or Delete Profile</strong>. You can now choose to delete your Threads profile specifically without affecting your Instagram account. Previously, they were locked together, but this has been updated.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-6" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              6. Why did Threads "fail" initially (and why is it back)?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              Threads saw a drop in 2023 because it lacked key features (like a desktop app and search). It has since "bounced back" because users are leaving X (Twitter) for a more positive, professional environment. It is now the fastest-growing text platform for creators.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-7" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              7. Threads vs Twitter (X): Which is better for business?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              For **Community Building, Lifestyle, and Education**, Threads is superior. It has higher engagement rates and a less "hostile" environment than X. For breaking news and politics, X is still dominant.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-8" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              8. What is the best time to post on Threads?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              Data suggests the **Evening (6pm - 10pm)** is the golden window. Threads is a "leisure" app where people go to chat after work, unlike LinkedIn (morning) or Instagram (all day).
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-9" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              9. Can you message people on Threads (DMs)?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              Threads integrates with **Instagram DMs**. When you message someone on Threads, it goes to their Instagram inbox. This is powerful because it keeps all your conversations in one place.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-10" className="border border-slate-800 bg-slate-900/50 backdrop-blur-sm rounded-2xl px-6">
+            <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-colors py-6">
+              10. Who owns Threads and is my data safe?
+            </AccordionTrigger>
+            <AccordionContent className="text-slate-300 text-base leading-relaxed pb-6">
+              Threads is owned by **Meta (Instagram/Facebook)**. It adheres to the same enterprise-grade security and privacy standards as Instagram.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </section>
   );
