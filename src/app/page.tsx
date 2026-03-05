@@ -15,19 +15,21 @@ import SkoolTrustRibbon from '../components/SkoolTrustRibbon';
 
 const Home = () => {
   return (
-    <main className="min-h-screen bg-background font-sans text-foreground selection:bg-primary/20">
+    <main className="min-h-screen bg-white">
       <Navbar />
       
-      <HeroSection />
-      <WhoIsThisFor />
-      <ProblemSection />
-      <RoadmapSection />
-      <ResultsSection />
-      <VideoShowcase />
-      <AboutCreator />
-      <FAQSection />
+      <div className="space-y-0">
+        <HeroSection />
+        <WhoIsThisFor />
+        <ProblemSection />
+        <RoadmapSection />
+        <ResultsSection />
+        <VideoShowcase />
+        <AboutCreator />
+        <FAQSection />
+        <CTASection />
+      </div>
       
-      <CTASection />
       <Footer />
       <SkoolTrustRibbon />
     </main>
