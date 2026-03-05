@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { NOMAD_URL } from "@/lib/constants";
 import { useSearchParams } from "@/lib/useSearchParams";
+import { reveal } from "@/lib/motion";
 
 export const CTASection = () => {
   const searchParams = useSearchParams();
@@ -11,12 +12,7 @@ export const CTASection = () => {
   return (
     <section className="py-32 md:py-48 bg-[var(--surface)] border-y border-[var(--border)]">
       <div className="reading-container text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45 }}
-        >
+        <motion.div {...reveal}>
           <h2 className="text-h1 mb-6 text-[var(--foreground)]">
             Start the System. Build the Pipeline.
           </h2>
@@ -27,7 +23,7 @@ export const CTASection = () => {
 
           <div className="flex flex-col items-center gap-6">
             <a href={`${NOMAD_URL}${searchParams}`} className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto bg-[var(--primary)] text-white px-10 py-5 rounded-[var(--radius-button-primary)] font-semibold text-[16px] hover:bg-[var(--primary-hover)] hover:-translate-y-[1px] transition-all flex items-center justify-center gap-2 shadow-sm">
+              <button className="w-full sm:w-auto btn-primary text-[16px] px-10 py-5 flex items-center justify-center gap-2 shadow-sm">
                 Start the System
                 <ArrowRight size={18} />
               </button>

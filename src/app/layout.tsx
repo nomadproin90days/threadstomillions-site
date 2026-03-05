@@ -164,13 +164,7 @@ const jsonLd = {
         'STAR Method',
         'Social media marketing',
       ],
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        ratingCount: '10000',
-        bestRating: '5',
-        worstRating: '1',
-      },
+      /* aggregateRating removed — add back only when backed by real review data */
     },
     {
       '@type': 'FAQPage',
@@ -227,7 +221,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFG6T543YR" />
@@ -256,7 +250,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>

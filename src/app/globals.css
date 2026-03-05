@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap");
 
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
@@ -13,12 +13,20 @@
 
   --primary: 166 55% 27%;
   --primary-hover: 166 56% 22%;
+  --primary-foreground: 0 0% 100%;
   --accent: 30 32% 55%;
   --success: 146 65% 34%;
   --warning: 32 82% 38%;
 
   --radius-card: 14px;
   --radius-ui: 10px;
+  --radius-button-primary: 999px;
+  --radius-button-secondary: 10px;
+
+  /* Aliases used by components */
+  --background: var(--bg);
+  --foreground: var(--text);
+  --muted-foreground: var(--muted-text);
 }
 
 /* ---------- Base ---------- */
@@ -42,7 +50,7 @@
   h2,
   h3,
   h4 {
-    font-family: "DM Serif Display", "Fraunces", serif;
+    font-family: "DM Serif Display", serif;
     letter-spacing: -0.02em;
     color: hsl(var(--text));
   }
@@ -84,12 +92,43 @@
   }
 }
 
-/* ---------- Utility classes ---------- */
- @layer components {
+/* ---------- Layout & Component classes ---------- */
+@layer components {
   .site-shell {
     @apply min-h-screen;
     background: hsl(var(--bg));
     color: hsl(var(--text));
+  }
+
+  .editorial-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    .editorial-container {
+      padding-inline: 40px;
+    }
+  }
+
+  .reading-container {
+    max-width: 720px;
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+
+  .editorial-card {
+    background: hsl(var(--surface));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-card);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    padding: 2rem;
+    @apply transition;
+  }
+
+  .editorial-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   }
 
   .container-trust {
@@ -134,7 +173,7 @@
     @apply inline-flex items-center justify-center font-semibold transition;
     background: hsl(var(--primary));
     color: #fff;
-    border-radius: 999px;
+    border-radius: var(--radius-button-primary);
     padding: 14px 24px;
   }
 
@@ -152,7 +191,7 @@
     background: transparent;
     color: hsl(var(--text));
     border: 1px solid hsl(var(--border));
-    border-radius: var(--radius-ui);
+    border-radius: var(--radius-button-secondary);
     padding: 14px 24px;
   }
 
@@ -207,22 +246,42 @@
 
   /* ---- Temporary backward-compat for existing ttm-* classes ---- */
   .ttm-cta {
-    @apply btn-primary;
+    @apply inline-flex items-center justify-center font-semibold transition;
+    background: hsl(var(--primary));
+    color: #fff;
+    border-radius: var(--radius-button-primary);
+    padding: 14px 24px;
+  }
+
+  .ttm-cta:hover {
+    background: hsl(var(--primary-hover));
+    transform: translateY(-1px);
   }
 
   .ttm-glass {
-    @apply card-trust;
+    background: hsl(var(--surface));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-card);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     backdrop-filter: blur(10px);
+    @apply transition;
   }
 
   .ttm-sticky-cta {
-    @apply fixed bottom-0 left-0 right-0 z-50 p-3 md:hidden;
+    @apply fixed bottom-0 left-0 right-0 z-50 p-3;
     background: hsl(var(--surface) / 0.96);
     border-top: 1px solid hsl(var(--border));
   }
 
+  @media (min-width: 768px) {
+    .ttm-sticky-cta {
+      display: none;
+    }
+  }
+
   .ttm-divider {
-    @apply divider-soft;
+    height: 1px;
+    background: hsl(var(--border));
   }
 
   .ttm-gradient-text {
@@ -238,19 +297,22 @@
   }
 
   .ttm-gradient-border {
-    @apply card-trust;
+    background: hsl(var(--surface));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius-card);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    @apply transition;
   }
 
   .ttm-glow,
   .ttm-hero-overlay {
-    /* Disable legacy glow/overlay look */
     box-shadow: none !important;
     background: none !important;
   }
 }
 
 /* ---------- Prose ---------- */
- @layer utilities {
+@layer utilities {
   .prose-trust {
     --tw-prose-body: hsl(var(--text) / 0.92);
     --tw-prose-headings: hsl(var(--text));
@@ -272,7 +334,7 @@
 }
 
 /* ---------- Motion safety ---------- */
- @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {

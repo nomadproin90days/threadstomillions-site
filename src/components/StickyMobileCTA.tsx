@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { NOMAD_URL } from "@/lib/constants";
 import { useSearchParams } from "@/lib/useSearchParams";
-import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export function StickyMobileCTA() {
@@ -12,12 +11,7 @@ export function StickyMobileCTA() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling down 500px (past hero)
-      if (window.scrollY > 500) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 500);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,12 +21,12 @@ export function StickyMobileCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/90 backdrop-blur-lg border-t border-border animate-in slide-in-from-bottom-full duration-300">
+    <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 p-3 bg-[var(--surface)]/96 backdrop-blur-lg border-t border-[var(--border)]">
       <a href={`${NOMAD_URL}${searchParams}`} className="block w-full">
-        <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-lg shadow-primary/20 h-14 rounded-xl text-lg">
+        <button className="w-full btn-primary h-14 text-lg shadow-lg flex items-center justify-center gap-2">
           Join the Community
-          <ArrowRight className="ml-2 w-5 h-5" />
-        </Button>
+          <ArrowRight size={18} />
+        </button>
       </a>
     </div>
   );

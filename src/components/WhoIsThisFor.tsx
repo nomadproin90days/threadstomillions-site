@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { reveal, revealWithDelay } from "@/lib/motion";
 
 export const WhoIsThisFor = () => {
   return (
     <section className="py-24 md:py-32 bg-[var(--background)]">
       <div className="editorial-container">
-        
+
         <div className="mb-16 text-center md:text-left">
           <h2 className="text-h2 mb-4">Who This Is For</h2>
           <p className="text-body-l text-[var(--muted-foreground)] max-w-2xl">
@@ -16,25 +17,22 @@ export const WhoIsThisFor = () => {
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {[
-            { 
-              title: "Creators", 
+            {
+              title: "Creators",
               desc: "You get engagement and views, but struggle to turn that attention into consistent sales or newsletter subscribers."
             },
-            { 
-              title: "Coaches & Consultants", 
-              desc: "You want a predictable way to generate inbound, high-ticket leads without relying on paid ads." 
+            {
+              title: "Coaches & Consultants",
+              desc: "You want a predictable way to generate inbound, high-ticket leads without relying on paid ads."
             },
-            { 
-              title: "Service Businesses", 
-              desc: "You need a repeatable daily content-to-conversion process to establish authority in your niche." 
+            {
+              title: "Service Businesses",
+              desc: "You need a repeatable daily content-to-conversion process to establish authority in your niche."
             }
           ].map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.05 }}
+              {...revealWithDelay(i * 0.05)}
               className="editorial-card"
             >
               <div className="text-h3 mb-3">{item.title}</div>
@@ -44,10 +42,7 @@ export const WhoIsThisFor = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45, delay: 0.2 }}
+          {...revealWithDelay(0.2)}
           className="bg-[var(--surface)] border border-[var(--warning)]/30 rounded-[var(--radius-card)] p-8 md:p-10 flex flex-col md:flex-row items-center gap-6"
         >
           <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--warning)]/10 flex items-center justify-center text-[var(--warning)] font-serif text-2xl italic">

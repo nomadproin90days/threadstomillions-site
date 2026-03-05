@@ -1,25 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { reveal, revealWithDelay } from "@/lib/motion";
 
 export const AboutCreator = () => {
   return (
     <section className="py-24 md:py-32 bg-[var(--surface)] border-y border-[var(--border)]">
       <div className="editorial-container">
-        
+
         <div className="mb-16">
           <h2 className="text-h2 mb-4">Built by a Creator Who Had to Make It Work</h2>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-          
+
           {/* Left: Narrative & Timeline */}
           <div className="lg:col-span-8">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45 }}
+              {...reveal}
               className="text-body-l text-[var(--muted-foreground)] mb-12 max-w-2xl leading-relaxed space-y-6"
             >
               <p>
@@ -28,10 +26,7 @@ export const AboutCreator = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: 0.1 }}
+              {...revealWithDelay(0.1)}
               className="space-y-8 pl-6 border-l-2 border-[var(--border)] relative"
             >
               <div className="relative">
@@ -57,10 +52,7 @@ export const AboutCreator = () => {
           {/* Right: Guarantees & Profile */}
           <div className="lg:col-span-4 space-y-8">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: 0.2 }}
+              {...revealWithDelay(0.2)}
               className="editorial-card bg-[var(--background)]"
             >
               <h4 className="text-[18px] font-semibold text-[var(--foreground)] mb-2">What I can guarantee</h4>
@@ -75,13 +67,10 @@ export const AboutCreator = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: 0.3 }}
+              {...revealWithDelay(0.3)}
               className="flex items-center gap-4"
             >
-              <img src="/Lexie.jpg" alt="Lexie" className="w-16 h-16 rounded-full object-cover grayscale" />
+              <img src="/lexie.jpg" alt="Lexie" className="w-16 h-16 rounded-full object-cover grayscale" />
               <div>
                 <div className="font-semibold text-[var(--foreground)]">Lexie</div>
                 <div className="text-micro text-[var(--muted-foreground)]">Founder, Threads to Millions</div>

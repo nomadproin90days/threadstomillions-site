@@ -12,13 +12,14 @@ import AboutCreator from '../components/AboutCreator';
 import FAQSection from '../components/FAQSection';
 import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
+import { StickyMobileCTA } from '../components/StickyMobileCTA';
 
 const Home = () => {
   return (
     <main className="min-h-screen bg-[var(--background)] selection:bg-[var(--primary)] selection:text-white">
       <TrustStrip />
       <Navbar />
-      
+
       <div className="space-y-0">
         <HeroSection />
         <ProofRow />
@@ -30,8 +31,9 @@ const Home = () => {
         <FAQSection />
         <CTASection />
       </div>
-      
+
       <Footer />
+      <StickyMobileCTA />
     </main>
   );
 };

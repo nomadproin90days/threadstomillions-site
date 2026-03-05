@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { revealWithDelay } from "@/lib/motion";
 
 const caseStudies = [
   {
@@ -12,34 +13,19 @@ const caseStudies = [
     metricAfter: "5-Figure Monthly",
     link: "https://threads.net/@getdigitalwithlexie"
   },
-  {
-    handle: "@creator_niche",
-    niche: "SaaS / Tech",
-    timeframe: "14 Days",
-    metricBefore: "0 Followers",
-    metricAfter: "2,400+ Followers",
-    link: "https://threads.net/@getdigitalwithlexie"
-  },
-  {
-    handle: "@service_pro",
-    niche: "Coaching",
-    timeframe: "30 Days",
-    metricBefore: "0 Inbound DMs",
-    metricAfter: "12 Qualified Sales Calls",
-    link: "https://threads.net/@getdigitalwithlexie"
-  }
+  /* Add real case studies here — placeholder entries removed */
 ];
 
 export const ResultsSection = () => {
   return (
     <section id="results" className="py-24 md:py-32 bg-[var(--background)]">
       <div className="editorial-container">
-        
+
         <div className="mb-16 md:flex md:items-end md:justify-between">
           <div className="max-w-2xl">
             <h2 className="text-h2 mb-4">Real Members. Real Timelines. Real Outcomes.</h2>
             <p className="text-body-l text-[var(--muted-foreground)]">
-              Auditable proof from creators and businesses executing the system.
+              Proof from creators and businesses executing the system.
             </p>
           </div>
         </div>
@@ -48,10 +34,7 @@ export const ResultsSection = () => {
           {caseStudies.map((item, i) => (
             <motion.div
               key={item.handle}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: i * 0.05 }}
+              {...revealWithDelay(i * 0.05)}
               className="editorial-card flex flex-col"
             >
               {/* Meta Row */}
@@ -64,21 +47,21 @@ export const ResultsSection = () => {
                   {item.timeframe}
                 </div>
               </div>
-              
+
               {/* Metrics */}
               <div className="mb-8 flex-grow">
                 <div className="text-small text-[var(--muted-foreground)] mb-1">Before</div>
                 <div className="font-mono text-[var(--foreground)] font-medium mb-4">{item.metricBefore}</div>
-                
+
                 <div className="text-small text-[var(--muted-foreground)] mb-1">After</div>
                 <div className="font-mono text-[var(--success)] font-semibold text-lg">{item.metricAfter}</div>
               </div>
-              
+
               {/* Verification Link */}
               <div className="pt-4 border-t border-[var(--border)]">
-                <a 
-                  href={item.link} 
-                  target="_blank" 
+                <a
+                  href={item.link}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-small font-semibold text-[var(--foreground)] hover:text-[var(--primary)] transition-colors"
                 >

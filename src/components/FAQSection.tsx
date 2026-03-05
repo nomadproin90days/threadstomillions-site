@@ -7,11 +7,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { reveal } from "@/lib/motion";
 
 const faqs = [
   {
     q: "How many hours per week do I need?",
-    a: "Minimum 5–7 hours/week. Recommended 7–10 for faster momentum. This accounts for content creation, engagement, and direct messaging."
+    a: "Minimum 5-7 hours/week. Recommended 7-10 for faster momentum. This accounts for content creation, engagement, and direct messaging."
   },
   {
     q: "What if I have under 500 followers?",
@@ -35,7 +36,7 @@ export const FAQSection = () => {
   return (
     <section id="faq" className="py-24 md:py-32 bg-[var(--background)]">
       <div className="reading-container">
-        
+
         <div className="mb-16 text-center">
           <h2 className="text-h2 mb-4">Questions Before You Join</h2>
           <p className="text-body-l text-[var(--muted-foreground)]">
@@ -43,12 +44,7 @@ export const FAQSection = () => {
           </p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45 }}
-        >
+        <motion.div {...reveal}>
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-b border-[var(--border)]">

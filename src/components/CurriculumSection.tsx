@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import { Check } from "lucide-react";
 import { NOMAD_URL } from "@/lib/constants";
 import { useSearchParams } from "@/lib/useSearchParams";
+import { reveal, revealWithDelay } from "@/lib/motion";
 
 const modules = [
   {
@@ -51,10 +51,7 @@ export const CurriculumSection = () => {
     <section id="curriculum" className="py-24 md:py-32 bg-[var(--background)]">
       <div className="editorial-container">
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.45 }}
+          {...reveal}
           className="max-w-3xl mb-16"
         >
           <h2 className="text-h2 mb-4">Everything You Need to Go From Posting to Pipeline</h2>
@@ -64,14 +61,9 @@ export const CurriculumSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          
+
           {/* Left: Module Accordion */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: 0.05 }}
-          >
+          <motion.div {...revealWithDelay(0.05)}>
             <h3 className="text-h3 mb-6">Inside the Program</h3>
             <Accordion type="single" collapsible className="w-full bg-[var(--surface)] border border-[var(--border)] rounded-[var(--radius-card)] px-6">
               {modules.map((mod, i) => (
@@ -96,15 +88,12 @@ export const CurriculumSection = () => {
 
           {/* Right: The First 7 Days */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: 0.1 }}
+            {...revealWithDelay(0.1)}
             className="editorial-card relative overflow-hidden"
           >
             <h3 className="text-h3 mb-2">First 7 Days Plan</h3>
             <p className="text-small text-[var(--muted-foreground)] mb-8">Execute immediately. No overwhelm.</p>
-            
+
             <div className="space-y-4">
               {firstSevenDays.map((step) => (
                 <div key={step.day} className="flex items-start gap-4">
@@ -120,7 +109,7 @@ export const CurriculumSection = () => {
 
             <div className="mt-10 pt-8 border-t border-[var(--border)]">
               <a href={`${NOMAD_URL}${searchParams}`} className="w-full">
-                <button className="w-full bg-transparent border border-[var(--border)] text-[var(--foreground)] px-8 py-3 rounded-[var(--radius-button-secondary)] font-semibold text-[15px] hover:bg-[#F0EFEC] transition-colors">
+                <button className="w-full btn-secondary text-[15px] px-8 py-3">
                   Get Instant Access
                 </button>
               </a>
