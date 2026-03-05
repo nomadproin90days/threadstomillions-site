@@ -7,6 +7,8 @@ import HeroSection from '../components/HeroSection';
 import ProblemSection from '../components/ProblemSection';
 import SolutionSection from '../components/SolutionSection';
 import VideoShowcase from '../components/VideoShowcase';
+import StrategySection from '../components/StrategySection';
+import StorySequenceSection from '../components/StorySequenceSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import AboutCreator from '../components/AboutCreator';
 import FAQSection from '../components/FAQSection';
@@ -36,6 +38,8 @@ const Home = () => {
       <ProblemSection />
       <SolutionSection />
       <VideoShowcase />
+      <StrategySection />
+      <StorySequenceSection />
       <TestimonialsSection />
       <AboutCreator />
       <FAQSection />
