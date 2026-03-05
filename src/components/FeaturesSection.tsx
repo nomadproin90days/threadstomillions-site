@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, Target, MessageSquare, Bot, BookOpen, Users } from "lucide-react";
+import { NOMAD_URL } from "@/lib/constants";
+import { useSearchParams } from "@/lib/useSearchParams";
 
 const features = [
   {
@@ -12,22 +14,22 @@ const features = [
   {
     icon: Target,
     title: "Content That Converts",
-    description: "Learn the exact frameworks for creating posts that drive engagement and sales.",
+    description: "Exact frameworks for creating posts that drive engagement and sales.",
   },
   {
     icon: Bot,
     title: "ThreadyBot Assistant",
-    description: "AI-powered tools to help you create better content faster and optimize your posting schedule.",
+    description: "AI-powered tools to create better content faster and optimize your posting schedule.",
   },
   {
     icon: MessageSquare,
     title: "Private Community",
-    description: "Connect with fellow creators, share wins, and get feedback from those who've been there.",
+    description: "Connect with fellow creators, share wins, and get feedback from people who&apos;ve been there.",
   },
   {
     icon: BookOpen,
     title: "Step-by-Step Courses",
-    description: "Comprehensive training modules that take you from beginner to expert at your own pace.",
+    description: "Comprehensive training modules from beginner to expert, at your own pace.",
   },
   {
     icon: Users,
@@ -37,47 +39,68 @@ const features = [
 ];
 
 const FeaturesSection = () => {
+  const searchParams = useSearchParams();
+
   return (
-    <section className="py-24 md:py-32 relative">
+    <section id="features" className="py-24 md:py-32 relative">
       <div className="container mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl uppercase mb-6">
-            What's{" "}
-            <span className="ttm-gradient-text">Included</span>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl mb-4">
+            What&apos;s{" "}
+            <span className="ttm-gradient-text">Inside</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Everything you need to master Threads and build a thriving business around your content.
+            Everything you need to master Threads and build a business around your content.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:ttm-glow"
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              className="group p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300"
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon className="w-7 h-7 text-primary" />
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <feature.icon className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">
+              <h3 className="font-heading text-lg font-semibold mb-2 text-foreground">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>
           ))}
         </div>
+
+        {/* Mid-page CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-16 text-center"
+        >
+          <a
+            href={`${NOMAD_URL}${searchParams}`}
+            className="ttm-cta inline-block px-8 py-4 text-base"
+          >
+            Join 10,000+ Creators
+          </a>
+          <p className="text-xs text-muted-foreground mt-3">
+            Cancel anytime &middot; 30-day money-back guarantee &middot; Secure checkout via Nomad Pro
+          </p>
+        </motion.div>
       </div>
     </section>
   );

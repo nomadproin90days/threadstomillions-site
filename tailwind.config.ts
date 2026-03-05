@@ -50,10 +50,10 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        heading: ['Oswald', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
-        display: ['Oswald', 'sans-serif'], // Added 'display' as per new HeroSection
-        sans: ['Inter', 'sans-serif'], // Default sans-serif to Inter
+        heading: ['Space Grotesk', 'sans-serif'],
+        body: ['DM Sans', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+        sans: ['DM Sans', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

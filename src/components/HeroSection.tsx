@@ -1,25 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { NOMAD_URL } from "@/lib/constants";
+import { useSearchParams } from "@/lib/useSearchParams";
+
 const HeroSection = () => {
+  const searchParams = useSearchParams();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a1118]">
-      {/* Background Gradient instead of broken image */}
+      {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#0a1118] via-[#0f1d2a] to-[#0a1118]" aria-hidden="true" />
-
-      {/* Overlay */}
       <div className="absolute inset-0 ttm-hero-overlay" aria-hidden="true" />
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 container mx-auto px-6 pt-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          {/* Logo/Badge */}
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -31,7 +33,7 @@ const HeroSection = () => {
           </motion.div>
 
           {/* Main Headline */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl uppercase leading-none mb-6">
+          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl leading-tight mb-6 text-balance">
             Turn Your{" "}
             <span className="ttm-gradient-text">Threads</span>
             <br />
@@ -39,26 +41,52 @@ const HeroSection = () => {
           </h1>
 
           {/* Sub-headline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 font-light">
-            The proven roadmap to turn your content into conversions—without feeling spammy or salesy.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 font-light leading-relaxed">
+            The proven roadmap to turn your content into conversions — without feeling spammy or salesy.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
           >
-            <a 
-              href="https://nomadproin90days.com/shop/d8beb61f-33df-4306-a897-87b3a1ffe197"
-              className="px-8 py-4 bg-[#5f8f93] hover:bg-[#6a9fa3] text-white rounded-full font-bold transition-all text-center shadow-lg shadow-[#5f8f93]/20"
+            <a
+              href={`${NOMAD_URL}${searchParams}`}
+              className="ttm-cta px-8 py-4 text-base md:text-lg text-center"
             >
-              Join the Community
+              Start Growing on Threads
             </a>
-            <Button variant="heroOutline" size="xl" asChild>
-              <a href="#strategy">Learn More</a>
-            </Button>
+            <a
+              href="#strategy"
+              className="px-8 py-4 border border-primary/30 text-primary hover:bg-primary/10 rounded-full font-medium transition-all text-center text-base"
+            >
+              See the Method
+            </a>
+          </motion.div>
+
+          {/* Social Proof Stats Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="flex flex-wrap justify-center gap-8 md:gap-12"
+          >
+            {[
+              { number: "10K+", label: "Active Members" },
+              { number: "$2M+", label: "Revenue Generated" },
+              { number: "500%", label: "Avg. Growth Rate" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="font-heading text-2xl md:text-3xl font-bold ttm-gold-gradient-text">
+                  {stat.number}
+                </div>
+                <div className="text-xs md:text-sm text-muted-foreground uppercase tracking-wider mt-1">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </motion.div>
         </motion.div>
 
@@ -66,7 +94,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
+          transition={{ delay: 1.2, duration: 0.5 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           aria-hidden="true"
         >
