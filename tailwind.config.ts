@@ -1,70 +1,46 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
-const config: Config = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+export default {
+  content: ["./src/**/*.{ts,tsx,js,jsx,mdx}"],
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        surface: 'var(--surface)',
-        foreground: 'var(--foreground)',
-        muted: {
-          DEFAULT: 'var(--muted-foreground)',
-          foreground: 'var(--muted-foreground)',
-        },
-        border: 'var(--border)',
-        primary: {
-          DEFAULT: 'var(--primary)',
-          hover: 'var(--primary-hover)',
-          foreground: 'var(--primary-foreground)',
-        },
-        accent: {
-          DEFAULT: 'var(--accent)',
-          foreground: 'var(--accent-foreground)',
-        },
-        success: 'var(--success)',
-        warning: 'var(--warning)',
-        card: {
-          DEFAULT: 'var(--surface)',
-          foreground: 'var(--foreground)',
-        },
-        popover: {
-          DEFAULT: 'var(--surface)',
-          foreground: 'var(--foreground)',
-        },
+        bg: "hsl(var(--bg))",
+        surface: "hsl(var(--surface))",
+        text: "hsl(var(--text))",
+        muted: "hsl(var(--muted-text))",
+        border: "hsl(var(--border))",
+        primary: "hsl(var(--primary))",
+        "primary-hover": "hsl(var(--primary-hover))",
+        accent: "hsl(var(--accent))",
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
       },
       borderRadius: {
-        card: 'var(--radius-card)',
-        button: 'var(--radius-button-secondary)',
-        pill: 'var(--radius-button-primary)',
+        card: "var(--radius-card)",
+        ui: "var(--radius-ui)",
+      },
+      maxWidth: {
+        content: "1200px",
+        reading: "720px",
+      },
+      boxShadow: {
+        card: "0 2px 8px rgba(0,0,0,.04)",
+        "card-hover": "0 8px 24px rgba(0,0,0,.08)",
       },
       fontFamily: {
-        heading: ['DM Serif Display', 'serif'],
-        display: ['DM Serif Display', 'serif'],
-        body: ['Inter', 'sans-serif'],
-        sans: ['Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        heading: ['"DM Serif Display"', "Fraunces", "serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+      fontSize: {
+        h1: ["56px", { lineHeight: "60px" }],
+        h2: ["40px", { lineHeight: "46px" }],
+        h3: ["28px", { lineHeight: "34px" }],
+        body: ["16px", { lineHeight: "26px" }],
+        small: ["14px", { lineHeight: "22px" }],
       },
     },
   },
   plugins: [],
-};
-export default config;
+} satisfies Config;
