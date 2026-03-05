@@ -1,48 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AlertCircle } from "lucide-react";
 
 const ProblemSection = () => {
   return (
-    <section className="py-24 md:py-32 relative bg-background">
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-background to-background" />
-      
+    <section className="py-24 relative bg-background overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 30 }} 
           whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
+          viewport={{ once: true }} 
           transition={{ duration: 0.6 }} 
-          className="max-w-4xl mx-auto text-center space-y-8"
+          className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl uppercase mb-12 text-white">
-            Does This Sound{" "}
-            <span className="ttm-gradient-text">Like You?</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 mb-8">
+            <AlertCircle className="w-4 h-4 text-red-500" />
+            <span className="text-red-500 font-bold text-xs uppercase tracking-widest">The Problem</span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-12 text-white">
+            Effort is not the issue. <br />
+            <span className="text-slate-500">The system is.</span>
           </h2>
           
-          <div className="space-y-6 text-xl md:text-2xl text-slate-300 leading-relaxed">
-            <p>
-              You're posting on Threads… <span className="text-white font-medium italic">but growth feels random.</span>
-            </p>
-            
-            <p>
-              Some posts hit. Most don't. <span className="text-primary font-semibold">You don't know why.</span>
-            </p>
-            
-            <p>
-              You see others blowing up and wonder what you're missing.
-            </p>
-            
-            <div className="py-8">
-              <p className="text-3xl md:text-4xl font-display uppercase text-white mb-4">
-                It's not effort. It's not talent.
-              </p>
-              <p className="text-4xl md:text-5xl lg:text-6xl font-display uppercase text-white">
-                It's the lack of a <span className="ttm-gradient-text">proven system.</span>
-              </p>
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 className="text-xl font-bold text-white mb-4">No DM Flow</h3>
+              <p className="text-slate-400">You post consistently but don't get qualified DMs from people ready to buy.</p>
             </div>
             
-            <p className="text-lg text-slate-400 pt-4">You're not alone—this is exactly where most Threads creators get stuck.</p>
+            <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 className="text-xl font-bold text-white mb-4">Zero Conversion</h3>
+              <p className="text-slate-400">Your content gets engagement but doesn't convert that attention into pipeline value.</p>
+            </div>
+            
+            <div className="p-8 rounded-2xl bg-slate-900 border border-slate-800">
+              <h3 className="text-xl font-bold text-white mb-4">Random Growth</h3>
+              <p className="text-slate-400">You don't have a repeatable system that takes a follower from a post to an offer.</p>
+            </div>
           </div>
         </motion.div>
       </div>
