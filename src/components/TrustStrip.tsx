@@ -1,12 +1,30 @@
+"use client";
+
 export const TrustStrip = () => {
+  const items = [
+    "THREADS TO MILLIONS",
+    "80% AFFILIATE COMMISSION",
+    "5,200+ MEMBERS",
+    "30-DAY GUARANTEE",
+    "POWERED BY SKOOL",
+    "THREADYBOT AI INCLUDED",
+  ];
+
+  // Double for seamless loop
+  const doubled = [...items, ...items];
+
   return (
-    <div className="bg-primary text-primary-foreground py-2 text-center text-micro font-medium border-b border-primary-hover">
-      <div className="editorial-container flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
-        <span>30-day guarantee</span>
-        <span className="hidden sm:inline-block opacity-50">•</span>
-        <span>Real case studies</span>
-        <span className="hidden sm:inline-block opacity-50">•</span>
-        <span>Support: hello@threadstomillions.com</span>
+    <div className="overflow-hidden bg-[hsl(var(--primary))] py-2.5 relative z-50">
+      <div className="animate-marquee flex whitespace-nowrap">
+        {doubled.map((item, i) => (
+          <span
+            key={i}
+            className="mx-8 text-[12px] font-bold uppercase tracking-[0.15em] text-[hsl(var(--primary-foreground))]"
+          >
+            {item}
+            <span className="ml-8 opacity-40">&#x2022;</span>
+          </span>
+        ))}
       </div>
     </div>
   );

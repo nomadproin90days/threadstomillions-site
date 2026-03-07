@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { getAllPosts } from '@/lib/blog-data';
+import { getAllPosts, BlogPost } from '@/lib/blog-data';
 
 export const metadata: Metadata = {
   title: 'Blog | Threads to Millions',
@@ -17,66 +18,105 @@ export const metadata: Metadata = {
   },
 };
 
+const categoryOrder = ['Getting Started', 'Growth', 'Content Strategy', 'Monetization', 'Strategy', 'Platform Strategy'];
+
+function groupByCategory(posts: BlogPost[]): Map<string, BlogPost[]> {
+  const map = new Map<string, BlogPost[]>();
+  for (const cat of categoryOrder) {
+    const filtered = posts.filter(p => p.category === cat);
+    if (filtered.length > 0) map.set(cat, filtered);
+  }
+  for (const post of posts) {
+    if (!categoryOrder.includes(post.category)) {
+      const existing = map.get(post.category) || [];
+      existing.push(post);
+      map.set(post.category, existing);
+    }
+  }
+  return map;
+}
+
 export default function BlogIndex() {
   const posts = getAllPosts();
+  const featured = posts[0];
+  const grouped = groupByCategory(posts);
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen bg-[hsl(var(--bg))]">
       <Navbar />
-      
-      {/* Blog Hero */}
-      <section className="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden">
-        <div className="container px-4 mx-auto relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6 uppercase tracking-tight">
-              Threads Growth <span className="text-primary">Masterclass</span>
+
+      {/* Header */}
+      <section className="pt-32 pb-10 md:pt-44 md:pb-14">
+        <div className="editorial-container">
+          <div className="max-w-3xl">
+            <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.95] text-[hsl(var(--text))] mb-4">
+              GUIDES & <span className="accent-italic">Playbooks</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Actionable strategies, deep dives, and proven frameworks to help you go from zero to millions on Threads.
+            <p className="text-[18px] text-[hsl(var(--text)/0.5)] leading-relaxed max-w-xl">
+              Everything Lexie teaches about growing and monetizing on Threads, published free and in full.
             </p>
           </div>
         </div>
-        
-        {/* Background gradient effect */}
-        <div className="absolute top-0 left-0 right-0 h-full bg-gradient-to-b from-primary/5 via-background to-background -z-10" />
       </section>
 
-      {/* Blog Posts Grid */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container px-4 mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="group block h-full">
-                <article className="h-full bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-colors duration-300 flex flex-col">
-                  <div className="p-6 md:p-8 flex flex-col flex-grow">
-                    <div className="flex items-center gap-2 text-xs font-medium text-primary mb-4 uppercase tracking-wider">
-                      <span>{post.category}</span>
-                      <span className="text-muted-foreground">•</span>
-                      <span className="text-muted-foreground">{post.readTime}</span>
+      {/* Featured */}
+      {featured && (
+        <section className="pb-12 md:pb-16">
+          <div className="editorial-container">
+            <Link href={`/blog/${featured.slug}`} className="group block">
+              <div className="glass-card p-8 md:p-12 hover:border-[hsl(var(--primary)/0.3)] transition-all duration-500">
+                <div className="flex items-center gap-3 text-[12px] uppercase tracking-[0.16em] text-[hsl(var(--muted-text))] mb-6">
+                  <span className="text-[hsl(var(--primary))]">{featured.category}</span>
+                  <span className="opacity-30">/</span>
+                  <span>{featured.readTime}</span>
+                </div>
+                <h2 className="text-[clamp(1.5rem,3.5vw,3rem)] leading-[1.05] mb-4 group-hover:text-[hsl(var(--primary))] transition-colors" style={{ textTransform: "none", fontFamily: "'Playfair Display', serif" }}>
+                  {featured.title}
+                </h2>
+                <p className="text-[hsl(var(--text)/0.5)] text-[17px] max-w-2xl mb-6">
+                  {featured.description}
+                </p>
+                <span className="inline-flex items-center gap-2 text-[15px] font-semibold text-[hsl(var(--primary))] group-hover:gap-3 transition-all">
+                  Read article
+                  <ArrowRight size={16} />
+                </span>
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* Category sections */}
+      {Array.from(grouped.entries()).map(([category, categoryPosts]) => (
+        <section key={category} className="pb-12 md:pb-16">
+          <div className="editorial-container">
+            <h2 className="text-[12px] uppercase tracking-[0.2em] text-[hsl(var(--muted-text))] font-semibold mb-6 pb-3 border-b border-[hsl(var(--border))]">
+              {category}
+            </h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
+              {categoryPosts.map((post) => (
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
+                  <article>
+                    <div className="flex items-center gap-3 text-[12px] text-[hsl(var(--muted-text))] mb-3">
+                      <span>{post.readTime}</span>
+                      <span className="opacity-30">|</span>
+                      <time dateTime={post.date}>
+                        {new Date(post.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                      </time>
                     </div>
-                    
-                    <h2 className="text-2xl font-heading font-bold text-foreground mb-4 group-hover:text-primary transition-colors line-clamp-2">
+                    <h3 className="text-[20px] leading-snug mb-2 text-[hsl(var(--text))] group-hover:text-[hsl(var(--primary))] transition-colors" style={{ textTransform: "none", fontFamily: "'Playfair Display', serif" }}>
                       {post.title}
-                    </h2>
-                    
-                    <p className="text-muted-foreground mb-6 line-clamp-3 flex-grow">
+                    </h3>
+                    <p className="text-[14px] text-[hsl(var(--text)/0.4)] line-clamp-2">
                       {post.description}
                     </p>
-                    
-                    <div className="mt-auto flex items-center justify-between pt-4 border-t border-border/50">
-                      <span className="text-sm text-muted-foreground">{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                      <span className="text-sm font-medium text-primary group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                        Read Article 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            ))}
+                  </article>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <Footer />
     </main>

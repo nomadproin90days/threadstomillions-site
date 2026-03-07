@@ -10,38 +10,47 @@ export const CTASection = () => {
   const searchParams = useSearchParams();
 
   return (
-    <section className="section-dark py-32 md:py-48">
-      <div className="reading-container text-center relative z-10">
+    <section className="relative py-32 md:py-48 overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/beach-hero.png"
+          alt=""
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(215,25%,8%,0.95)] via-[hsl(215,25%,8%,0.88)] to-[hsl(215,25%,8%,0.8)]" />
+      </div>
+
+      <div className="editorial-container text-center relative z-10">
         <motion.div {...reveal}>
-          <h2 className="text-h1 mb-6 text-white">
-            Start the System. Build the Pipeline.
+          <h2 className="text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] mb-6">
+            GET READY TO <span className="accent-italic">Grow</span>
+            <br />
+            WITH THREADS TO MILLIONS
           </h2>
 
-          <p className="text-lg text-white/60 mb-12 max-w-xl mx-auto">
-            If you want qualified leads from Threads without guessing what to
-            post next, this is your operating system.
+          <p className="text-[18px] text-[hsl(var(--text)/0.4)] mb-12 max-w-xl mx-auto">
+            Lifetime access to the Skool community and resources. 80% affiliate commission. ThreadyBot AI included.
           </p>
 
           <div className="flex flex-col items-center gap-6">
-            <a
-              href={`${NOMAD_URL}${searchParams}`}
-              className="w-full sm:w-auto"
-            >
-              <button className="w-full sm:w-auto btn-primary text-[16px] px-10 py-5 flex items-center justify-center gap-2 shadow-lg shadow-[hsl(var(--primary))]/20">
-                Start the System
-                <ArrowRight size={18} />
+            <a href={`${NOMAD_URL}${searchParams}`}>
+              <button className="btn-primary text-[18px] px-12 py-6 flex items-center gap-3 shadow-xl shadow-[hsl(var(--primary))]/20">
+                Join Threads to Millions
+                <ArrowRight size={20} />
               </button>
             </a>
 
-            <div className="text-sm text-white/40 max-w-md mx-auto leading-relaxed">
-              Try it for 30 days. If it&apos;s not a fit, email{" "}
+            <div className="text-[14px] text-[hsl(var(--text)/0.3)] max-w-md mx-auto">
+              30-day guarantee. Cancel anytime. Email{" "}
               <a
                 href="mailto:hello@threadstomillions.com"
-                className="text-white/70 underline decoration-white/20 hover:decoration-white/50 transition-colors"
+                className="text-[hsl(var(--text)/0.5)] underline decoration-[hsl(var(--text)/0.15)] hover:decoration-[hsl(var(--text)/0.4)] transition-colors"
               >
                 hello@threadstomillions.com
               </a>{" "}
-              for a refund.
+              for support.
             </div>
           </div>
         </motion.div>

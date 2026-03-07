@@ -27,26 +27,29 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-[var(--surface)]/90 backdrop-blur-md border-b border-[var(--border)] shadow-sm py-4'
+          ? 'bg-[hsl(var(--bg))]/80 backdrop-blur-xl border-b border-[hsl(var(--border))] py-4'
           : 'bg-transparent py-6'
       }`}
     >
       <div className="editorial-container flex justify-between items-center">
-        {/* Wordmark */}
-        <Link href="/" className="font-heading text-[22px] tracking-tight text-[var(--foreground)] hover:text-[var(--primary)] transition-colors">
-          Threads to Millions
+        <Link
+          href="/"
+          className="text-[22px] font-bold uppercase tracking-[0.15em] text-[hsl(var(--text))] hover:text-[hsl(var(--primary))] transition-colors"
+          style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+        >
+          TTM
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <div className="flex gap-6 text-small text-[var(--muted-foreground)]">
+          <div className="flex gap-6 text-[13px] uppercase tracking-[0.1em] text-[hsl(var(--muted-text))]">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="hover:text-[var(--foreground)] transition-colors"
+                className="hover:text-[hsl(var(--text))] transition-colors"
               >
                 {link.name}
               </Link>
@@ -54,15 +57,15 @@ const Navbar = () => {
           </div>
 
           <a href={`${NOMAD_URL}${searchParams}`}>
-            <button className="btn-primary text-[15px] px-6 py-3">
-              Start
+            <button className="btn-primary text-[14px] px-6 py-3">
+              Join Now
             </button>
           </a>
         </nav>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-[var(--foreground)] p-2"
+          className="md:hidden text-[hsl(var(--text))] p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -71,12 +74,12 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[var(--surface)] border-b border-[var(--border)] py-4 px-6 shadow-lg flex flex-col gap-4">
+        <div className="md:hidden absolute top-full left-0 w-full bg-[hsl(var(--bg))]/95 backdrop-blur-xl border-b border-[hsl(var(--border))] py-6 px-6 flex flex-col gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-body font-medium text-[var(--foreground)] py-2 border-b border-[var(--border)]"
+              className="text-[15px] uppercase tracking-[0.1em] font-medium text-[hsl(var(--text))] py-3 border-b border-[hsl(var(--border))]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               {link.name}
@@ -84,7 +87,7 @@ const Navbar = () => {
           ))}
           <a href={`${NOMAD_URL}${searchParams}`} className="mt-4">
             <button className="w-full btn-primary py-4">
-              Start the System
+              Join Now
             </button>
           </a>
         </div>

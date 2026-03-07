@@ -4,10 +4,11 @@ import Navbar from '../components/Navbar';
 import { TrustStrip } from '../components/TrustStrip';
 import HeroSection from '../components/HeroSection';
 import { ProofRow } from '../components/ProofRow';
+import FeaturedArticlesSection from '../components/FeaturedArticlesSection';
 import WhoIsThisFor from '../components/WhoIsThisFor';
 import MethodSection from '../components/MethodSection';
-import CurriculumSection from '../components/CurriculumSection';
 import ResultsSection from '../components/ResultsSection';
+import CurriculumSection from '../components/CurriculumSection';
 import AboutCreator from '../components/AboutCreator';
 import FAQSection from '../components/FAQSection';
 import CTASection from '../components/CTASection';
@@ -16,7 +17,7 @@ import { StickyMobileCTA } from '../components/StickyMobileCTA';
 
 const Home = () => {
   return (
-    <main className="min-h-screen bg-[var(--background)] selection:bg-[var(--primary)] selection:text-white">
+    <main className="min-h-screen bg-[hsl(var(--bg))] selection:bg-[hsl(var(--primary)/0.3)] selection:text-white">
       <TrustStrip />
       <Navbar />
 
@@ -25,8 +26,9 @@ const Home = () => {
         <ProofRow />
         <WhoIsThisFor />
         <MethodSection />
-        <CurriculumSection />
         <ResultsSection />
+        <CurriculumSection />
+        <FeaturedArticlesSection />
         <AboutCreator />
         <FAQSection />
         <CTASection />

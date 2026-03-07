@@ -3,28 +3,23 @@ import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { getAllSlugs, getPostBySlug } from '@/lib/blog-data';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { getAllSlugs, getAllPosts, getPostBySlug } from '@/lib/blog-data';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogCTA from '@/components/BlogCTA';
 
-// Use generateStaticParams for static generation at build time
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
-  return slugs.map((slug) => ({
-    slug,
-  }));
+  return slugs.map((slug) => ({ slug }));
 }
 
-// Generate metadata for each post
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post) {
-    return {
-      title: 'Post Not Found',
-    };
+    return { title: 'Post Not Found' };
   }
 
   return {
@@ -40,6 +35,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+function getRelatedPosts(currentSlug: string, currentCategory: string) {
+  const allPosts = getAllPosts();
+  const sameCategory = allPosts.filter(p => p.category === currentCategory && p.slug !== currentSlug);
+  const others = allPosts.filter(p => p.category !== currentCategory && p.slug !== currentSlug);
+  return [...sameCategory, ...others].slice(0, 3);
+}
+
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -48,44 +50,84 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
+  const related = getRelatedPosts(slug, post.category);
+
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-[hsl(var(--bg))] text-[hsl(var(--text))]">
       <Navbar />
 
-      <article className="pt-32 pb-16 md:pt-48 md:pb-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-2 text-sm font-medium text-primary mb-6 uppercase tracking-wider">
-            <span className="bg-primary/10 px-3 py-1 rounded-full">{post.category}</span>
-            <span className="text-muted-foreground">•</span>
-            <span className="text-muted-foreground">{post.readTime}</span>
-          </div>
-          
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 leading-tight">
-            {post.title}
-          </h1>
-          
-          <div className="flex items-center justify-center gap-4 text-sm text-muted-foreground">
-            <time dateTime={post.date}>
-              {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-            </time>
+      <article className="pt-32 pb-16 md:pt-44 md:pb-24">
+        <header className="editorial-container mb-12">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-3 text-[12px] uppercase tracking-[0.16em] text-[hsl(var(--muted-text))] mb-6">
+              <Link href="/blog" className="hover:text-[hsl(var(--text))] transition-colors">Blog</Link>
+              <span className="opacity-30">/</span>
+              <span className="text-[hsl(var(--primary))]">{post.category}</span>
+              <span className="opacity-30">/</span>
+              <span>{post.readTime}</span>
+            </div>
+
+            <h1 className="text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.1] tracking-[-0.01em] text-[hsl(var(--text))] mb-6" style={{ textTransform: "none", fontFamily: "'Playfair Display', serif" }}>
+              {post.title}
+            </h1>
+
+            <div className="flex items-center gap-4 text-[14px] text-[hsl(var(--muted-text))]">
+              <time dateTime={post.date}>
+                {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+              <span className="opacity-30">|</span>
+              <span>By Lexie</span>
+            </div>
           </div>
         </header>
 
-        <div className="prose prose-lg prose-invert max-w-none mx-auto prose-headings:font-heading prose-headings:font-bold prose-a:text-primary hover:prose-a:text-primary/80 prose-strong:text-foreground prose-code:text-accent prose-pre:bg-card prose-pre:border prose-pre:border-border">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>
-            {post.content}
-          </ReactMarkdown>
-        </div>
+        <div className="reading-container">
+          <div className="prose prose-lg max-w-none prose-trust prose-headings:font-heading prose-headings:tracking-tight prose-a:text-[hsl(var(--primary))] hover:prose-a:text-[hsl(var(--primary-hover))] prose-strong:text-[hsl(var(--text))]">
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {post.content}
+            </ReactMarkdown>
+          </div>
 
-        <BlogCTA variant="end" />
-
-        <div className="mt-10 pt-8 border-t border-border flex justify-between items-center">
-          <Link href="/blog" className="text-primary hover:underline flex items-center gap-2 font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-            Back to Blog
-          </Link>
+          <BlogCTA variant="end" />
         </div>
       </article>
+
+      {/* Related articles */}
+      {related.length > 0 && (
+        <section className="py-16 md:py-20 border-t border-[hsl(var(--border))]">
+          <div className="editorial-container">
+            <h2 className="text-[12px] uppercase tracking-[0.2em] text-[hsl(var(--muted-text))] font-semibold mb-8">
+              Keep reading
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {related.map((relPost) => (
+                <Link key={relPost.slug} href={`/blog/${relPost.slug}`} className="group block">
+                  <article>
+                    <div className="flex items-center gap-3 text-[12px] text-[hsl(var(--muted-text))] mb-3">
+                      <span className="text-[hsl(var(--primary))]">{relPost.category}</span>
+                      <span className="opacity-30">|</span>
+                      <span>{relPost.readTime}</span>
+                    </div>
+                    <h3 className="text-[20px] leading-snug mb-2 text-[hsl(var(--text))] group-hover:text-[hsl(var(--primary))] transition-colors" style={{ textTransform: "none", fontFamily: "'Playfair Display', serif" }}>
+                      {relPost.title}
+                    </h3>
+                    <p className="text-[14px] text-[hsl(var(--text)/0.4)] line-clamp-2">
+                      {relPost.description}
+                    </p>
+                  </article>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-[hsl(var(--border))]">
+              <Link href="/blog" className="inline-flex items-center gap-2 text-[15px] font-semibold text-[hsl(var(--text))] hover:text-[hsl(var(--primary))] transition-colors">
+                <ArrowLeft size={16} />
+                All articles
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       <Footer />
     </main>
