@@ -6,8 +6,8 @@ export const Footer = () => {
   return (
     <footer className="bg-[var(--background)] py-16">
       <div className="editorial-container">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 border-b border-[var(--border)] pb-12 mb-8">
-          
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 border-b border-[var(--border)] pb-12 mb-8">
+
           <div className="lg:col-span-2">
             <div className="font-heading text-[20px] tracking-tight text-[var(--foreground)] mb-6">
               Threads to Millions
@@ -26,6 +26,17 @@ export const Footer = () => {
               <li><Link href="#method" className="text-small text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">The STAR Method</Link></li>
               <li><Link href="#results" className="text-small text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">Verified Results</Link></li>
               <li><Link href="#curriculum" className="text-small text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">Curriculum</Link></li>
+              <li><Link href="/blog" className="text-small text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">All Articles</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-micro text-[var(--foreground)] mb-6">Lessons & Guides</h4>
+            <ul className="space-y-4">
+              <li><Link href="/blog/threads-monetization-requirements" className="text-small text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">Monetization Requirements</Link></li>
+              <li><Link href="/blog/threads-monetization-blueprint-2026" className="text-small text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">Monetization Blueprint 2026</Link></li>
+              <li><Link href="/blog/threads-app-guide-2026" className="text-small text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">Threads App Guide 2026</Link></li>
+              <li><Link href="/blog/10-proven-hooks" className="text-small text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors">Viral Hook Formulas</Link></li>
             </ul>
           </div>
 
