@@ -7,7 +7,7 @@ const stats = [
   { value: "5,200+", label: "Active Members", color: "hsl(var(--primary))" },
   { value: "Aug 2024", label: "Community Est.", color: "hsl(var(--text))" },
   { value: "80%", label: "Affiliate Commission", color: "hsl(var(--primary))" },
-  { value: "$47", label: "Lifetime Access", color: "hsl(var(--text))" },
+  { value: "$97", label: "Lifetime Access", color: "hsl(var(--text))" },
 ];
 
 export const ProofRow = () => {
