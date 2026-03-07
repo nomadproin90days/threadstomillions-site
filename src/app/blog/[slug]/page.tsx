@@ -25,12 +25,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} | Threads to Millions`,
     description: post.description,
+    alternates: {
+      canonical: `https://threadstomillions.com/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       type: 'article',
       publishedTime: post.date,
-      authors: ['Threads to Millions'],
+      authors: ['Lexie (@getdigitalwithlexie)'],
+      url: `https://threadstomillions.com/blog/${slug}`,
+      siteName: 'Threads to Millions',
+      images: [{ url: 'https://threadstomillions.com/og-image-v6.jpg', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
     },
   };
 }
@@ -52,8 +63,43 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   const related = getRelatedPosts(slug, post.category);
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      '@type': 'Person',
+      name: 'Lexie',
+      url: 'https://www.threads.net/@getdigitalwithlexie',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Threads to Millions',
+      url: 'https://threadstomillions.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://threadstomillions.com/og-image-v6.jpg',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://threadstomillions.com/blog/${slug}`,
+    },
+    image: 'https://threadstomillions.com/og-image-v6.jpg',
+    articleSection: post.category,
+    keywords: post.keywords.join(', '),
+    wordCount: post.content.split(/\s+/).length,
+  };
+
   return (
     <main className="min-h-screen bg-[hsl(var(--bg))] text-[hsl(var(--text))]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Navbar />
 
       <article className="pt-32 pb-16 md:pt-44 md:pb-24">

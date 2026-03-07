@@ -8,6 +8,9 @@ import { getAllPosts, BlogPost } from '@/lib/blog-data';
 export const metadata: Metadata = {
   title: 'Blog | Threads to Millions',
   description: 'Expert guides, strategies, and insights on growing and monetizing your Threads audience.',
+  alternates: {
+    canonical: 'https://threadstomillions.com/blog',
+  },
   openGraph: {
     title: 'Threads to Millions Blog',
     description: 'Master Threads growth and monetization with our expert guides.',
