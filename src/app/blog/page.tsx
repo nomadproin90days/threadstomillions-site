@@ -19,6 +19,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Threads to Millions Blog',
+    description: 'Master Threads growth and monetization with our expert guides.',
+  },
 };
 
 const categoryOrder = ['Getting Started', 'Growth', 'Content Strategy', 'Monetization', 'Strategy', 'Platform Strategy'];
