@@ -69,9 +69,8 @@ export default function TermsPage() {
               4. Refund Policy
             </h2>
             <p>
-              We offer a 30-day money-back guarantee on our digital products. If
-              you are not satisfied with your purchase, you may request a full
-              refund within 30 days of your purchase date by contacting us at{" "}
+              If you are not satisfied with your purchase, you may request a
+              refund by contacting us at{" "}
               <a
                 href="mailto:hello@threadstomillions.com"
                 className="text-primary hover:underline"

@@ -5,7 +5,7 @@ export const TrustStrip = () => {
     "THREADS TO MILLIONS",
     "80% AFFILIATE COMMISSION",
     "5,200+ MEMBERS",
-    "30-DAY GUARANTEE",
+    "CANCEL ANYTIME",
     "POWERED BY SKOOL",
     "THREADYBOT AI INCLUDED",
   ];

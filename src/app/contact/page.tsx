@@ -124,9 +124,8 @@ export default function ContactPage() {
                   What is your refund policy?
                 </h3>
                 <p>
-                  We offer a 30-day money-back guarantee. If you&apos;re not
-                  satisfied, email us within 30 days of purchase for a full
-                  refund. See our{" "}
+                  If you&apos;re not satisfied, email us and we&apos;ll
+                  work with you. See our{" "}
                   <Link href="/terms" className="text-primary hover:underline">
                     Terms of Service
                   </Link>{" "}

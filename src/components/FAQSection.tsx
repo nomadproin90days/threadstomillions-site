@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "What if I'm not satisfied?",
-    a: "You have 30 days. Email support and request a refund per our refund policy.",
+    a: "Email support anytime and we'll work with you. See our refund policy for details.",
   },
   {
     q: "What is the affiliate commission?",

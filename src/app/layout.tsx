@@ -199,7 +199,7 @@ const jsonLd = {
           name: 'How much does Threads to Millions cost?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Threads to Millions offers flexible membership options with a 30-day money-back guarantee. You can cancel anytime and get instant access to all courses, the private community, weekly live calls, and the ThreadyBot AI assistant.',
+            text: 'Threads to Millions offers flexible membership options. You can cancel anytime and get instant access to all courses, the private community, weekly live calls, and the ThreadyBot AI assistant.',
           },
         },
         {

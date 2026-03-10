@@ -43,7 +43,7 @@ export const CTASection = () => {
             </a>
 
             <div className="text-[14px] text-[hsl(var(--text)/0.3)] max-w-md mx-auto">
-              30-day guarantee. Cancel anytime. Email{" "}
+              Cancel anytime. Email{" "}
               <a
                 href="mailto:hello@threadstomillions.com"
                 className="text-[hsl(var(--text)/0.5)] underline decoration-[hsl(var(--text)/0.15)] hover:decoration-[hsl(var(--text)/0.4)] transition-colors"
