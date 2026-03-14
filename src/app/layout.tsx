@@ -15,29 +15,7 @@ export const metadata: Metadata = {
     template: '%s | Threads to Millions',
   },
   description:
-    'Join 5,200+ creators using the proven STAR Method to grow and monetize on Threads. Learn content strategies, engagement tactics, and monetization frameworks from Lexie (@getdigitalwithlexie).',
-  keywords: [
-    'Threads',
-    'Threads app',
-    'make money on Threads',
-    'Threads monetization',
-    'grow on Threads',
-    'Threads strategy',
-    'Threads algorithm',
-    'Threads tips',
-    'Threads growth',
-    'social media monetization',
-    'content creator course',
-    'Threads to Millions',
-    'STAR Method',
-    'Lexie Threads',
-    'getdigitalwithlexie',
-    'how to grow on Threads',
-    'Threads for business',
-    'Threads engagement',
-    'Threads content strategy',
-    'monetize social media',
-  ],
+    'Join 5,200+ creators learning to grow and monetize on Threads. 25 course modules, 495+ templates, DM strategies, marketing psychology, and the ThreadyBot AI assistant. Members report $5K+ months and 130K+ views in 30 days.',
   authors: [{ name: 'Lexie', url: 'https://www.threads.net/@getdigitalwithlexie' }],
   creator: 'Lexie (@getdigitalwithlexie)',
   publisher: 'Threads to Millions',
@@ -72,13 +50,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     title: 'Threads to Millions - Grow and Monetize Your Threads Audience',
     description:
-      'Join 5,200+ creators using the proven STAR Method to grow and monetize on Threads. Active Skool community since Aug 2024.',
+      'Join 5,200+ creators learning to grow and monetize on Threads. 25 modules, 495+ templates, and an AI writing assistant. Members report $5K+ months.',
     images: [
       {
         url: '/og-image-v6.jpg',
         width: 1200,
         height: 630,
-        alt: 'Threads to Millions - Master the Threads Algorithm and Monetize Your Audience',
+        alt: 'Threads to Millions - 25 modules, 495+ templates, 5,200+ members growing and monetizing on Threads',
         type: 'image/jpeg',
       },
     ],
@@ -87,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Threads to Millions - Grow and Monetize Your Threads Audience',
     description:
-      'Join 5,200+ creators using the proven STAR Method to grow and monetize on Threads. Active Skool community since Aug 2024.',
+      'Join 5,200+ creators learning to grow and monetize on Threads. 25 modules, 495+ templates, and an AI writing assistant. Members report $5K+ months.',
     images: ['/og-image-v6.jpg'],
     creator: '@getdigitalwithlexie',
   },
@@ -136,7 +114,7 @@ const jsonLd = {
       '@id': 'https://threadstomillions.com/#course',
       name: 'Threads to Millions',
       description:
-        'A comprehensive community and course teaching creators how to grow their Threads audience and monetize their content using the STAR Method. Includes step-by-step courses, weekly live calls, AI-powered tools, and a private community of 5,200+ members.',
+        'A 25-module course and community teaching creators how to grow their Threads audience and monetize their content. Includes 495+ post templates, DM closing strategies, marketing psychology training, the ThreadyBot AI writing assistant, and a private Skool community of 5,200+ members. Guest modules by @chloedigitally, @shiftwithalex, and more.',
       provider: {
         '@id': 'https://threadstomillions.com/#organization',
       },
@@ -150,6 +128,8 @@ const jsonLd = {
       offers: {
         '@type': 'Offer',
         url: 'https://nomadproin90days.com/shop/d8beb61f-33df-4306-a897-87b3a1ffe197',
+        price: '97',
+        priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
         category: 'Online Course',
       },
@@ -172,42 +152,50 @@ const jsonLd = {
       mainEntity: [
         {
           '@type': 'Question',
-          name: 'What is Threads to Millions?',
+          name: 'How many hours per week do I need?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Threads to Millions (TTM) is a community and course created by Lexie (@getdigitalwithlexie) that teaches creators how to grow their audience and monetize on the Threads social media platform. It includes step-by-step courses, weekly live calls, AI-powered tools like ThreadyBot, and a private community of 5,200+ members.',
+            text: 'Minimum 5-7 hours/week. Recommended 7-10 for faster momentum. This accounts for content creation, engagement, and direct messaging.',
           },
         },
         {
           '@type': 'Question',
-          name: 'What is the STAR Method?',
+          name: 'What if I have under 500 followers?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'The STAR Method is the core methodology taught in Threads to Millions. It stands for: Story First (lead with your personal transformation), Teach for Free (give your best advice without asking for anything), 80/20 Engagement Rule (spend 80% of your time engaging with others), and Sell in the Downthread (never open with a pitch — hook your audience first, then mention your offer naturally in the replies).',
+            text: "That's fine. The system is designed to work from a low audience size with proper positioning and execution.",
           },
         },
         {
           '@type': 'Question',
-          name: 'Can you really make money on Threads?',
+          name: 'Do I need paid ads?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Yes. Threads to Millions members have reported five-figure months and consistent sales from Threads. The community teaches proven strategies for monetizing your Threads presence through content creation and authentic engagement.',
+            text: 'No. This is built for organic growth and conversion.',
           },
         },
         {
           '@type': 'Question',
-          name: 'How much does Threads to Millions cost?',
+          name: 'What tools are required?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Threads to Millions offers flexible membership options. You can cancel anytime and get instant access to all courses, the private community, weekly live calls, and the ThreadyBot AI assistant.',
+            text: 'A free Threads account and a basic link or checkout setup. Optional tools (like ThreadyBot) are listed in onboarding.',
           },
         },
         {
           '@type': 'Question',
-          name: 'Do I need a large following to get started?',
+          name: 'What if I\'m not satisfied?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Not at all. Lexie started without a massive following or a marketing degree. The TTM strategies are designed for creators at any level. Members have reported significant follower growth, with some gaining hundreds of followers in their first weeks.',
+            text: 'Email support anytime and we\'ll work with you. See our refund policy for details.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What is the affiliate commission?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '80% commission on every sale you refer. You get your own affiliate link inside the Skool community.',
           },
         },
       ],

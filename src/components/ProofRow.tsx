@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { reveal, revealWithDelay } from "@/lib/motion";
 
 const stats = [
-  { value: "5,200+", label: "Active Members", color: "hsl(var(--primary))" },
-  { value: "Aug 2024", label: "Community Est.", color: "hsl(var(--text))" },
+  { value: "5,200+", label: "Members", color: "hsl(var(--primary))" },
+  { value: "25", label: "Course Modules", color: "hsl(var(--text))" },
   { value: "80%", label: "Affiliate Commission", color: "hsl(var(--primary))" },
   { value: "$97", label: "Lifetime Access", color: "hsl(var(--text))" },
 ];

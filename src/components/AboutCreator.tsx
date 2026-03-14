@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { reveal, revealWithDelay, slideInLeft, slideInRight } from "@/lib/motion";
 
 export const AboutCreator = () => {
@@ -11,9 +12,11 @@ export const AboutCreator = () => {
           {/* Left: Photo */}
           <motion.div {...slideInLeft} className="lg:col-span-5">
             <div className="relative">
-              <img
+              <Image
                 src="/lexie.jpg"
-                alt="Lexie, founder of Threads to Millions"
+                alt="Lexie, founder of Threads to Millions and creator of the STAR Method for Threads growth"
+                width={600}
+                height={600}
                 className="w-full rounded-[var(--radius-card)] border border-[hsl(var(--border))]"
               />
               <div className="absolute -bottom-4 -right-4 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] px-5 py-3 rounded-[var(--radius-ui)] font-bold text-[14px] uppercase tracking-wider">

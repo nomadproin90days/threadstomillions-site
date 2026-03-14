@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { reveal, revealWithDelay, scaleReveal } from "@/lib/motion";
+
+const testimonialImages = [
+  { src: "/images/testimonials/threads-success-story-1.png", alt: "TTM member @chloedigitally showing 2,126 new followers and $1,539 in sales from Threads in 10 weeks" },
+  { src: "/images/testimonials/threads-success-story-2.png", alt: "TTM member sharing revenue results and follower growth from Threads to Millions community" },
+  { src: "/images/testimonials/threads-success-story-3.png", alt: "TTM member reaching 1M views milestone using the STAR Method on Threads" },
+];
 
 interface Testimonial {
   handle: string;
@@ -23,29 +30,33 @@ const testimonials: Testimonial[] = [
     featured: true,
   },
   {
+    handle: "Clara Brooks",
+    quote:
+      "I joined the community on May 2025. For nearly 3 months? Nothing to show. No traffic. No leads. Zero sales. But I didn't give up. I went back to the modules, kept applying the lessons, and stayed consistent even when no one was watching. Today, I hit $5,700 in sales.",
+    metrics: ["$5,700 in total sales", "Breakthrough from one spotlight post"],
+  },
+  {
+    handle: "Laura Miller",
+    quote:
+      "I've had TTM 3 weeks. In that time I've gained 600+ new followers, a 200% rise in store visits, 70K+ views. It's been amazing! I've stopped making content on my other platforms and my store visits are still the highest they've ever been.",
+    metrics: ["600+ new followers in 3 weeks", "200% rise in store visits", "70K+ views"],
+  },
+  {
+    handle: "Nicola Coates",
+    quote:
+      "I bought TTM 4 weeks ago determined to take Threads seriously. So I dived into the course and all I can say is WOW!",
+    metrics: ["1K to 130K views in 30 days", "Tripled following", "First sale in 4 weeks"],
+  },
+  {
+    handle: "Reetika Bhardwaj",
+    quote:
+      "This journey humbled me. For months results didn't show even though the effort was there but I kept believing, kept learning. Everything changed when I shifted my mindset and approach. Today I'm thankful for a $5K win.",
+    metrics: ["$5,000 in sales"],
+  },
+  {
     handle: "@digitalwithsav",
     quote:
       "I invested in Threads to Millions & this happened... I gained 500+ new followers. Sold it 16 times. Have over 170K views!!! I will never shut up about it.",
-  },
-  {
-    handle: "@kickitwith.kalinah",
-    quote:
-      "Threads to Millions really is that girl! Almost 50k views, over 200 Thriends, and a few potential leads in less than 2 weeks? Wild.",
-  },
-  {
-    handle: "@digitalmoneyemma",
-    quote:
-      "THIS IS INSANE! I can't believe I'm about to reach 2M views soon. Thanks Threads to Millions.",
-  },
-  {
-    handle: "@socialsociety.hub",
-    quote:
-      "I can spot a Threads to Millions post a mile away. They use a good hook. They don't use ick to make sales. They comment with purpose. They're making sales. Coincidence? I don't think so.",
-  },
-  {
-    handle: "@vbdigitalmarketing",
-    quote:
-      "One thing I know without a doubt: Threads to Millions is truly one of the HIGHEST VALUE, low-ticket courses out there!",
   },
   {
     handle: "@thedigitalpowerhouse",
@@ -54,9 +65,20 @@ const testimonials: Testimonial[] = [
     metrics: ["1.0M total views"],
   },
   {
-    handle: "@digitalfaithfueledmama",
+    handle: "Chanel Sanon",
     quote:
-      "YOU need Threads to Millions if you want to start monetizing threads! The results are insane!",
+      "I OFFICIALLY WENT FROM 3.4K to 3.6K in less than 24 hours on Threads!! ITS OFFICIAL I'VE REACHED 3K FOLLOWERS ON THREADS!!!",
+    metrics: ["3.6K followers", "200 gained in 24 hours"],
+  },
+  {
+    handle: "@kickitwith.kalinah",
+    quote:
+      "Threads to Millions really is that girl! Almost 50k views, over 200 Thriends, and a few potential leads in less than 2 weeks? Wild.",
+  },
+  {
+    handle: "@socialsociety.hub",
+    quote:
+      "I can spot a Threads to Millions post a mile away. They use a good hook. They don't use ick to make sales. They comment with purpose. They're making sales. Coincidence? I don't think so.",
   },
 ];
 
@@ -131,11 +153,13 @@ export const ResultsSection = () => {
 
         {/* Real screenshot testimonials */}
         <div className="grid md:grid-cols-3 gap-4 mb-8">
-          {[1, 2, 3].map((n) => (
-            <motion.div key={n} {...scaleReveal} className="rounded-[var(--radius-card)] overflow-hidden border border-[hsl(var(--border))]">
-              <img
-                src={`/images/testimonials/threads-success-story-${n}.png`}
-                alt={`Real Threads success story from TTM member`}
+          {testimonialImages.map((img, i) => (
+            <motion.div key={i} {...scaleReveal} className="rounded-[var(--radius-card)] overflow-hidden border border-[hsl(var(--border))]">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={600}
+                height={800}
                 className="w-full h-auto"
               />
             </motion.div>
@@ -150,8 +174,18 @@ export const ResultsSection = () => {
           ))}
         </div>
         <div className="grid md:grid-cols-3 gap-4 mt-4">
-          {rest.slice(1).map((item, i) => (
+          {rest.slice(1, 4).map((item, i) => (
             <TestimonialCard key={item.handle} item={item} index={i + 2} />
+          ))}
+        </div>
+        <div className="grid md:grid-cols-3 gap-4 mt-4">
+          {rest.slice(4, 7).map((item, i) => (
+            <TestimonialCard key={item.handle} item={item} index={i + 5} />
+          ))}
+        </div>
+        <div className="grid md:grid-cols-2 gap-4 mt-4">
+          {rest.slice(7).map((item, i) => (
+            <TestimonialCard key={item.handle} item={item} index={i + 8} />
           ))}
         </div>
       </div>

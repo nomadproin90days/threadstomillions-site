@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { reveal, revealWithDelay, slideInLeft, slideInRight } from "@/lib/motion";
 
 const profiles = [
@@ -26,10 +27,12 @@ export const WhoIsThisFor = () => {
     <section className="relative py-24 md:py-32 overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/beach-boardwalk.png"
           alt=""
-          className="w-full h-full object-cover opacity-15"
+          fill
+          className="object-cover opacity-15"
+          sizes="100vw"
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-[hsl(var(--bg))] opacity-90" />

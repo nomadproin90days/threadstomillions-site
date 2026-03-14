@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { NOMAD_URL } from "@/lib/constants";
 import { useSearchParams } from "@/lib/useSearchParams";
 import { reveal } from "@/lib/motion";
@@ -13,10 +14,12 @@ export const CTASection = () => {
     <section className="relative py-32 md:py-48 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/beach-hero.png"
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          sizes="100vw"
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[hsl(215,25%,8%,0.95)] via-[hsl(215,25%,8%,0.88)] to-[hsl(215,25%,8%,0.8)]" />

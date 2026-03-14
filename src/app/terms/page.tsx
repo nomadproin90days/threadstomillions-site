@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service - Threads to Millions",
+  title: "Terms of Service",
   description:
     "Terms of service for Threads to Millions. Read our terms covering purchases, refunds, intellectual property, and more.",
+  alternates: {
+    canonical: 'https://threadstomillions.com/terms',
+  },
 };
 
 export default function TermsPage() {

@@ -9,44 +9,79 @@ import { ArrowRight } from "lucide-react";
 
 const modules = [
   {
-    title: "1. The Foundation & Positioning",
-    outcome: "A profile that converts visitors into followers instantly.",
-    assets: "Profile Audit Checklist, Niche Positioning Matrix",
+    title: "Threads Basics",
+    outcome: "Profile setup, algorithm training, post features, engagement features, and downthreads.",
+    assets: "START HERE module for new members",
   },
   {
-    title: "2. Hook Mastery",
-    outcome: "Headlines that stop the scroll without resorting to clickbait.",
-    assets: "50+ Proven Hook Templates, Swipe File",
+    title: "Threads to Millions Guide",
+    outcome: "All proven strategies for growing your following, engagement, and making sales on Threads.",
+    assets: "The core TTM growth + monetization playbook",
   },
   {
-    title: "3. Story Architecture",
-    outcome: "Write posts that build deep emotional resonance.",
-    assets: "The Hero's Journey Framework, 5 Story Structures",
+    title: "Writing Threads That Attract",
+    outcome: "Write threads that effectively attract and hold your target audience.",
+    assets: "Hook frameworks, story structures, content templates",
   },
   {
-    title: "4. The Downthread Conversion Engine",
-    outcome: "Seamlessly transition from value to pitching your offer.",
-    assets: "Offer Transition Scripts, 'Soft Pitch' Templates",
+    title: "Boosting Visibility on Threads",
+    outcome: "Reach more people and get discovered by your ideal audience.",
+    assets: "Visibility strategies and algorithm tactics",
   },
   {
-    title: "5. Engagement Operating System",
-    outcome: "Leverage other people's audiences to build your own.",
-    assets: "Daily 30-Minute Engagement Checklist",
+    title: "Marketing Psychology for Threads",
+    outcome: "Use buyer and sales psychology to attract your target audience and bring in passive sales.",
+    assets: "Psychology frameworks for content and conversion",
+  },
+  {
+    title: "Authentic Branding on Threads",
+    outcome: "Build a personal brand that stands out and earns trust.",
+    assets: "Brand positioning and authenticity frameworks",
+  },
+  {
+    title: "Expanding Your Reach",
+    outcome: "Reach non-followers and audiences outside digital marketing.",
+    assets: "Cross-niche visibility strategies",
+  },
+  {
+    title: "Effective Selling on Threads",
+    outcome: "Sell to both digital marketers and non-digital marketers.",
+    assets: "Selling frameworks for different audiences",
+  },
+  {
+    title: "Content Pillars for Threads",
+    outcome: "Master the content types that attract your audience and build trust.",
+    assets: "Content pillar templates and rotation system",
+  },
+  {
+    title: "From Threads to DM's",
+    outcome: "Close sales with confidence through direct messages.",
+    assets: "DM scripts, do's and don'ts. By @chloedigitally",
+  },
+  {
+    title: "Inbox to Millions",
+    outcome: "Turn Threads traffic into email subscribers and lifelong customers.",
+    assets: "Email marketing integration system",
+  },
+  {
+    title: "Daily Posting + Engagement Schedule",
+    outcome: "A printable daily schedule for consistent growth.",
+    assets: "Daily schedule PDF + video walkthrough",
   },
 ];
 
 const included = [
-  "Examples of content that converts",
-  "Proven strategies for growth",
-  "Attracting your target audience",
-  "Selling tips + driving silent buyers",
-  "Fill in the blank Threads templates",
+  "25 course modules covering growth + sales",
+  "495+ fill-in-the-blank Threads templates",
   "Daily posting + engagement schedule",
-  "Tips for branding yourself on Threads",
-  "Skool community platform access",
-  "Bonus resources for Threads growth",
+  "Marketing psychology for passive sales",
+  "DM closing strategies by @chloedigitally",
+  "Stories to Millions by @shiftwithalex",
+  "Pins to Millions (Threads to Pinterest)",
+  "Threads Self-Audit Worksheet",
+  "ThreadyBot AI writing assistant",
+  "Skool community access",
   "80% affiliate commissions",
-  "ThreadyBot - your AI writing assistant",
 ];
 
 export const CurriculumSection = () => {
@@ -60,7 +95,7 @@ export const CurriculumSection = () => {
             WHAT&apos;S <span className="accent-italic">Included</span>
           </h2>
           <p className="text-[18px] text-[hsl(var(--text)/0.5)] max-w-2xl mx-auto">
-            17 implementation modules, 50+ hooks and frameworks, weekly live calls, and a private community with real feedback loops.
+            25 modules, 495+ templates, guest expert courses, and a private community of 5,200+ members with real feedback loops.
           </p>
         </motion.div>
 

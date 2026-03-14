@@ -5,8 +5,23 @@ import Footer from '@/components/Footer';
 import EmailCaptureForm from '@/components/EmailCaptureForm';
 
 export const metadata: Metadata = {
-  title: 'Free Threads Growth Guide - Threads to Millions',
+  title: 'Free Threads Growth Guide',
   description: 'Download the free guide on how to grow and monetize your Threads audience in 2026. The STAR method framework, posting templates, and engagement strategies.',
+  alternates: {
+    canonical: 'https://threadstomillions.com/free-lead-magnet',
+  },
+  openGraph: {
+    title: 'Free Threads Growth Guide',
+    description: 'Download the free guide on how to grow and monetize your Threads audience in 2026.',
+    url: 'https://threadstomillions.com/free-lead-magnet',
+    siteName: 'Threads to Millions',
+    images: [{ url: 'https://threadstomillions.com/og-image-v6.jpg', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Threads Growth Guide',
+    description: 'Download the free guide on how to grow and monetize your Threads audience in 2026.',
+  },
 };
 
 export default function FreeLeadMagnet() {

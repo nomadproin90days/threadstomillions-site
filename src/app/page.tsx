@@ -1,5 +1,3 @@
-"use client";
-
 import Navbar from '../components/Navbar';
 import { TrustStrip } from '../components/TrustStrip';
 import HeroSection from '../components/HeroSection';
@@ -15,7 +13,7 @@ import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 import { StickyMobileCTA } from '../components/StickyMobileCTA';
 
-const Home = () => {
+export default function Home() {
   return (
     <main className="min-h-screen bg-[hsl(var(--bg))] selection:bg-[hsl(var(--primary)/0.3)] selection:text-white">
       <TrustStrip />
@@ -38,6 +36,4 @@ const Home = () => {
       <StickyMobileCTA />
     </main>
   );
-};
-
-export default Home;
+}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { NOMAD_URL } from "@/lib/constants";
 import { useSearchParams } from "@/lib/useSearchParams";
 
@@ -42,10 +43,13 @@ const HeroSection = () => {
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/beach-hero.png"
           alt=""
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
           aria-hidden="true"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[hsl(215,25%,8%,0.75)] via-[hsl(215,25%,8%,0.85)] to-[hsl(215,25%,8%,1)]" />

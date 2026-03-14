@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Threads to Millions",
+  title: "Privacy Policy",
   description:
     "Privacy policy for Threads to Millions. Learn how we collect, use, and protect your personal information.",
+  alternates: {
+    canonical: 'https://threadstomillions.com/privacy',
+  },
 };
 
 export default function PrivacyPage() {

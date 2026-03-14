@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact - Threads to Millions",
+  title: "Contact",
   description:
     "Get in touch with Threads to Millions. Reach out to Lexie via Threads DM or email for questions about our courses and community.",
+  alternates: {
+    canonical: 'https://threadstomillions.com/contact',
+  },
 };
 
 export default function ContactPage() {

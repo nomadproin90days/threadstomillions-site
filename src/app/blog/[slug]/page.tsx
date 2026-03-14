@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${post.title} | Threads to Millions`,
+    title: post.title,
     description: post.description,
     alternates: {
       canonical: `https://threadstomillions.com/blog/${slug}`,
@@ -63,6 +63,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   const related = getRelatedPosts(slug, post.category);
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://threadstomillions.com' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://threadstomillions.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title },
+    ],
+  };
+
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -96,6 +106,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   return (
     <main className="min-h-screen bg-[hsl(var(--bg))] text-[hsl(var(--text))]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
