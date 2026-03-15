@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-03-15'),
       changeFrequency: 'daily',
       priority: 0.9,
     },
