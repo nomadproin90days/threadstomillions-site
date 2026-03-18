@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { getAllSlugs, getAllPosts, getPostBySlug } from '@/lib/blog-data';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlogCTA from '@/components/BlogCTA';
+import AffiliateCTA from '@/components/AffiliateCTA';
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -148,7 +148,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </ReactMarkdown>
           </div>
 
-          <BlogCTA variant="end" />
+          <AffiliateCTA variant="end" />
         </div>
       </article>
 
