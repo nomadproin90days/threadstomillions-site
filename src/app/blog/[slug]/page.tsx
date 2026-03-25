@@ -142,11 +142,29 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </header>
 
         <div className="reading-container">
-          <div className="prose prose-lg max-w-none prose-trust prose-headings:font-heading prose-headings:tracking-tight prose-a:text-[hsl(var(--primary))] hover:prose-a:text-[hsl(var(--primary-hover))] prose-strong:text-[hsl(var(--text))]">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {post.content}
-            </ReactMarkdown>
-          </div>
+          {(() => {
+          const paragraphs = post.content.split('\n\n');
+          const splitIndex = Math.floor(paragraphs.length * 0.4);
+          const firstHalf = paragraphs.slice(0, splitIndex).join('\n\n');
+          const secondHalf = paragraphs.slice(splitIndex).join('\n\n');
+          return (
+            <>
+              <div className="prose prose-lg max-w-none prose-trust prose-headings:font-heading prose-headings:tracking-tight prose-a:text-[hsl(var(--primary))] hover:prose-a:text-[hsl(var(--primary-hover))] prose-strong:text-[hsl(var(--text))]">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {firstHalf}
+                </ReactMarkdown>
+              </div>
+
+              <AffiliateCTA variant="inline" />
+
+              <div className="prose prose-lg max-w-none prose-trust prose-headings:font-heading prose-headings:tracking-tight prose-a:text-[hsl(var(--primary))] hover:prose-a:text-[hsl(var(--primary-hover))] prose-strong:text-[hsl(var(--text))]">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {secondHalf}
+                </ReactMarkdown>
+              </div>
+            </>
+          );
+        })()}
 
           <AffiliateCTA variant="end" />
         </div>

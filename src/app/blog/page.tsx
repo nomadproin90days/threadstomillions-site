@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { getAllPosts, BlogPost } from '@/lib/blog-data';
 
 export const metadata: Metadata = {
-  title: 'Blog | Threads to Millions',
+  title: 'Blog',
   description: 'Expert guides, strategies, and insights on growing and monetizing your Threads audience.',
   alternates: {
     canonical: 'https://threadstomillions.com/blog',

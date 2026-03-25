@@ -2887,7 +2887,7 @@ For the complete eligibility breakdown, read our [Threads monetization requireme
   },
 
   {
-    slug: 'threads-algorithm-2026',
+    slug: 'threads-algorithm-reset-2026',
     title: 'How the Threads Algorithm Works in 2026 (And How to Reset It)',
     description: 'How the Threads algorithm decides what to show in your feed, the 3/8/12 rule, how to reset it when reach drops, and the signals that get your posts seen.',
     date: '2026-03-23',

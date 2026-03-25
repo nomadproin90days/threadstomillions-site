@@ -116,14 +116,21 @@ const jsonLd = {
       description:
         'A 25-module course and community teaching creators how to grow their Threads audience and monetize their content. Includes 495+ post templates, DM closing strategies, marketing psychology training, the ThreadyBot AI writing assistant, and a private Skool community of 5,200+ members. Guest modules by @chloedigitally, @shiftwithalex, and more.',
       provider: {
+        '@type': 'Organization',
         '@id': 'https://threadstomillions.com/#organization',
+        name: 'Threads to Millions',
       },
       instructor: {
         '@type': 'Person',
+        '@id': 'https://threadstomillions.com/#lexie',
         name: 'Lexie',
         alternateName: 'getdigitalwithlexie',
+        url: 'https://www.threads.net/@getdigitalwithlexie',
       },
-      url: 'https://nomadproin90days.com/shop/d8beb61f-33df-4306-a897-87b3a1ffe197',
+      inLanguage: 'en',
+      educationalLevel: 'Beginner',
+      coursePrerequisites: 'A free Threads account',
+      url: 'https://threadstomillions.com',
       image: 'https://threadstomillions.com/og-image-v6.jpg',
       offers: {
         '@type': 'Offer',
