@@ -2330,8 +2330,8 @@ Use the updates. They are genuinely useful. But do not let feature exploration d
   },
   {
     slug: 'how-to-grow-on-threads-2026',
-    title: 'How to Grow on Threads in 2026 (0 to 10K Followers Playbook)',
-    description: 'The step-by-step Threads growth system for 2026. Algorithm tactics, content strategy, posting schedule, and engagement methods that are working right now.',
+    title: 'How to Grow on Threads 2026: The 0 to 10K Followers Playbook (Algorithm + Content Strategy)',
+    description: 'Proven Threads growth system for 2026. Algorithm tactics, posting schedule, engagement hacks, and the content strategy that took creators from 0 to 10K followers in 90 days.',
     date: '2026-03-08',
     readTime: '9 min read',
     category: 'Growth',
@@ -2769,8 +2769,8 @@ Threads is one of the most accessible platforms for organic growth in 2026. The 
   },
   {
     slug: 'how-to-get-paid-on-threads',
-    title: 'How to Get Paid on Threads in 2026 (Step-by-Step)',
-    description: 'How to get paid from the Threads app in 2026. How to check your monetization status, how many views you need, how to turn on monetization, and 4 ways to earn.',
+    title: 'How to Get Paid on Threads 2026: Monetization Status, Views Needed, and 4 Income Methods',
+    description: 'Step-by-step guide to getting paid on Threads in 2026. Check your monetization status, see how many views you actually need, and the 4 ways creators earn $1K-$10K/month.',
     date: '2026-03-23',
     readTime: '5 min read',
     category: 'Monetization',
@@ -2888,8 +2888,8 @@ For the complete eligibility breakdown, read our [Threads monetization requireme
 
   {
     slug: 'threads-algorithm-reset-2026',
-    title: 'How the Threads Algorithm Works in 2026 (And How to Reset It)',
-    description: 'How the Threads algorithm decides what to show in your feed, the 3/8/12 rule, how to reset it when reach drops, and the signals that get your posts seen.',
+    title: 'Threads Algorithm 2026: How It Works, Why Reach Drops, and How to Reset It',
+    description: 'The Threads algorithm explained for 2026. How it ranks posts, the 3/8/12 rule, why your reach dropped, and the exact steps to reset it and get seen again.',
     date: '2026-03-23',
     readTime: '6 min read',
     category: 'Growth',
