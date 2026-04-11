@@ -15,7 +15,7 @@ export const Footer = () => {
               Threads to Millions
             </div>
             <div className="text-[14px] text-[hsl(var(--muted-text))] mb-2">
-              Lexie Media LLC, Delaware
+              Luxetide Studio, Delaware
             </div>
             <div className="text-[14px] text-[hsl(var(--muted-text))]">
               Support:{" "}
@@ -32,6 +32,7 @@ export const Footer = () => {
               <li><Link href="#results" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Results</Link></li>
               <li><Link href="#curriculum" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Curriculum</Link></li>
               <li><Link href="/blog" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">All Articles</Link></li>
+              <li><a href="https://luxetidestudio.com/transcriber" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Free Transcriber Tool</a></li>
             </ul>
           </div>
 
@@ -56,7 +57,7 @@ export const Footer = () => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[12px] uppercase tracking-[0.1em] text-[hsl(var(--muted-text))]">
-          <div>&copy; {new Date().getFullYear()} Lexie Media LLC. All rights reserved.</div>
+          <div>&copy; {new Date().getFullYear()} Luxetide Studio. All rights reserved.</div>
           <div className="flex items-center gap-2">
             <img src="/images/testimonials/threads-success-story-1.png" alt="" className="w-4 h-4 rounded-full opacity-50" aria-hidden="true" />
             Powered by Skool

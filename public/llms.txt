@@ -1,49 +1,133 @@
 # Threads to Millions
 
-> Threads to Millions is a community and course teaching creators how to grow and monetize on the Threads social media platform.
+> Threads to Millions is a course and community by Lexie (@getdigitalwithlexie) that teaches creators, coaches, and service businesses how to grow an audience and generate revenue on the Threads social media platform using the STAR Method.
 
-## Site Info
+## About
+
+Threads to Millions (TTM) is a Skool-hosted community with 5,200+ members and a 25-module self-paced course. It was created by Lexie, a creator who built a system for turning Threads content into consistent inbound leads and 5-figure monthly revenue without paid ads.
+
+The course costs $97 for lifetime access and includes 495+ fill-in-the-blank post templates, DM closing scripts, marketing psychology training, a daily posting and engagement schedule, and the ThreadyBot AI writing assistant. Members earn 80% affiliate commission on referrals.
+
 - URL: https://threadstomillions.com
-- Founded by: Lexie (@getdigitalwithlexie)
+- Creator: Lexie (@getdigitalwithlexie) on Threads
 - Community: 5,200+ members on Skool
-- Course: 25 modules, 495+ post templates, DM strategies, marketing psychology training
-- Method: The STAR Method (Story First, Teach for Free, 80/20 Engagement, Sell in the Downthread)
 - Price: $97 lifetime access
-- Affiliate commission: 80%
+- Affiliate commission: 80% per sale
+- Entity: Luxetide Studio, Delaware
+
+## The STAR Method
+
+The core framework taught in Threads to Millions:
+
+- **S - Story First**: Post one credibility story daily (15 min). Builds trust and profile visits.
+- **T - Teach for Free**: Publish one tactical framework post daily (20 min). Builds authority.
+- **A - 80/20 Engagement**: Spend 80% of time on strategic replies (25 min). Increases reach and inbound DMs.
+- **R - Sell in the Downthread**: Place your offer after value, not before (5 min). More qualified clicks, lower resistance.
+
+## Who It's For
+
+- **Creators** who get views but can't turn attention into sales
+- **Coaches** who want inbound leads without paying for ads
+- **Service businesses** who need a repeatable way to generate demand
+
+## What's Included
+
+- 25 course modules covering growth and sales
+- 495+ fill-in-the-blank Threads templates
+- Daily posting and engagement schedule
+- Marketing psychology for passive sales
+- DM closing strategies (guest module by @chloedigitally)
+- Stories to Millions (guest module by @shiftwithalex)
+- Pins to Millions (Threads to Pinterest strategy)
+- Threads Self-Audit Worksheet
+- ThreadyBot AI writing assistant
+- Private Skool community access
+- 80% affiliate commissions
+
+## Course Modules
+
+1. Threads Basics - Profile setup, algorithm training, post features, engagement features, downthreads
+2. Threads to Millions Guide - Core growth and monetization playbook
+3. Writing Threads That Attract - Hook frameworks, story structures, content templates
+4. Boosting Visibility on Threads - Visibility strategies and algorithm tactics
+5. Marketing Psychology for Threads - Buyer psychology for content and conversion
+6. Authentic Branding on Threads - Personal brand positioning
+7. Expanding Your Reach - Cross-niche visibility strategies
+8. Effective Selling on Threads - Selling frameworks for different audiences
+9. Content Pillars for Threads - Content types and rotation system
+10. From Threads to DMs - DM closing scripts (by @chloedigitally)
+11. Inbox to Millions - Email marketing integration
+12. Daily Posting + Engagement Schedule - Printable daily schedule
+
+## FAQ
+
+**How many hours per week do I need?**
+Minimum 5-7 hours/week. Recommended 7-10 for faster momentum. This accounts for content creation, engagement, and direct messaging.
+
+**What if I have under 500 followers?**
+The system is designed to work from a low audience size with proper positioning and execution.
+
+**Do I need paid ads?**
+No. This is built for organic growth and conversion.
+
+**What tools are required?**
+A free Threads account and a basic link or checkout setup. Optional tools like ThreadyBot are listed in onboarding.
+
+**What is the affiliate commission?**
+80% commission on every sale you refer. You get your own affiliate link inside the Skool community.
 
 ## Key Pages
 
-- Homepage: https://threadstomillions.com - Course overview, STAR Method, testimonials, FAQ
-- Blog: https://threadstomillions.com/blog - 33 guides on Threads growth and monetization
+- [Homepage](https://threadstomillions.com): Course overview, STAR Method, curriculum, testimonials, FAQ
+- [Blog](https://threadstomillions.com/blog): 33 guides on Threads growth and monetization
+- [Lead Magnet](https://threadstomillions.com/free-lead-magnet): Free resource for Threads creators
 
-## Blog Topics
+## Blog Articles
 
-### Monetization
-- https://threadstomillions.com/blog/threads-monetization-requirements - Requirements and 4 ways creators get paid on Threads
-- https://threadstomillions.com/blog/how-to-get-paid-on-threads - Step-by-step guide to earning on Threads
-- https://threadstomillions.com/blog/can-you-make-money - Real income data and monetization paths
-- https://threadstomillions.com/blog/threads-monetization-blueprint-2026 - Complete monetization blueprint
-- https://threadstomillions.com/blog/does-threads-pay-creators-2026 - Creator payment programs and alternatives
+### Monetization Guides
+- [Threads Monetization Requirements 2026](https://threadstomillions.com/blog/threads-monetization-requirements): Program status, eligibility, and how creators actually get paid
+- [How to Get Paid on Threads 2026](https://threadstomillions.com/blog/how-to-get-paid-on-threads): Step-by-step guide to earning on Threads
+- [Can You Make Money on Threads in 2026?](https://threadstomillions.com/blog/can-you-make-money): Real income data and monetization paths
+- [Threads Monetization Options 2026](https://threadstomillions.com/blog/threads-monetization-blueprint-2026): 4 ways to make money with real earnings
+- [Does Threads Pay Creators in 2026?](https://threadstomillions.com/blog/does-threads-pay-creators-2026): Program status, earnings data, and better alternatives
+- [How Many Followers to Make Money on Threads](https://threadstomillions.com/blog/threads-followers-to-make-money): Real follower thresholds for each income method
+- [How to Make Money on Threads](https://threadstomillions.com/blog/first-sale-guide): 6-step process from $0 to first sale in 30 days
+- [How to Monetize Threads Naturally](https://threadstomillions.com/blog/monetizing-attention): Turn attention into revenue without being salesy
 
-### Growth
-- https://threadstomillions.com/blog/threads-algorithm-2026 - How the Threads algorithm works
-- https://threadstomillions.com/blog/threads-algorithm-reset-2026 - How to reset the algorithm when reach drops
-- https://threadstomillions.com/blog/how-to-grow-on-threads-2026 - Growth strategies for Threads
-- https://threadstomillions.com/blog/10-proven-hooks - Viral opening lines for Threads posts
-- https://threadstomillions.com/blog/profile-optimization - Optimizing your Threads profile
+### Growth Strategies
+- [How to Grow on Threads 2026](https://threadstomillions.com/blog/how-to-grow-on-threads-2026): The 0 to 10K followers playbook
+- [Threads Algorithm 2026](https://threadstomillions.com/blog/threads-algorithm-2026): How the algorithm works and ranks posts
+- [Threads Algorithm Reset 2026](https://threadstomillions.com/blog/threads-algorithm-reset-2026): Why reach drops and how to reset it
+- [How to Go Viral on Threads 2026](https://threadstomillions.com/blog/newsjacking-secret): Newsjacking framework and timing windows
+- [10 Viral Threads Hooks](https://threadstomillions.com/blog/10-proven-hooks): Opening lines that get engagement
+- [How to Get Threads Followers Fast](https://threadstomillions.com/blog/scaling-strategy): Scaling strategy for rapid growth
+- [Threads Profile Optimization Tips](https://threadstomillions.com/blog/profile-optimization): Optimize your profile for conversions
 
-### Strategy
-- https://threadstomillions.com/blog/threads-for-business-2026 - Using Threads for business
-- https://threadstomillions.com/blog/star-method-explained - The STAR Method framework
-- https://threadstomillions.com/blog/four-content-pillars - Content pillar strategy
-- https://threadstomillions.com/blog/dm-strategy - DM conversion strategies
-- https://threadstomillions.com/blog/engagement-hacks - Engagement optimization
+### Content & Strategy
+- [STAR Method for Threads Content](https://threadstomillions.com/blog/star-method-explained): The complete STAR framework explained
+- [What to Post on Threads: 4 Pillars](https://threadstomillions.com/blog/four-content-pillars): Content pillar strategy
+- [Best Time to Post on Threads 2026](https://threadstomillions.com/blog/posting-blueprint): Posting schedule and timing
+- [Threads DM Strategy That Converts](https://threadstomillions.com/blog/dm-strategy): DM conversion strategies
+- [7 Threads Engagement Hacks 2026](https://threadstomillions.com/blog/engagement-hacks): Engagement optimization
+- [Threads Content Recycling System](https://threadstomillions.com/blog/content-recycling): Repurpose content for consistent output
+- [Threads Analytics: 5 Key Metrics](https://threadstomillions.com/blog/vanity-metrics): Track the metrics that matter
 
-### Platform
-- https://threadstomillions.com/blog/threads-app-guide-2026 - Complete Threads app guide
-- https://threadstomillions.com/blog/threads-vs-x-2026 - Threads vs X comparison
-- https://threadstomillions.com/blog/threads-ads-2026 - Threads advertising guide
+### Platform & Business
+- [Threads App 2026 Complete Guide](https://threadstomillions.com/blog/threads-app-guide-2026): Features, algorithm changes, and setup
+- [Threads vs X in 2026](https://threadstomillions.com/blog/threads-vs-x-2026): Which platform is better for creators
+- [Threads Ads 2026](https://threadstomillions.com/blog/threads-ads-2026): Are Threads ads worth it
+- [Threads App Updates 2026](https://threadstomillions.com/blog/threads-app-update-2026): Latest features and changes
+- [How to Use Threads for Business 2026](https://threadstomillions.com/blog/threads-for-business-2026): Complete business guide
+- [Is Threads Dead? Data Says No](https://threadstomillions.com/blog/why-threads-failed): Platform growth data
+- [How to Grow on Threads Fast 2026](https://threadstomillions.com/blog/the-threads-opportunity): The Threads opportunity explained
+
+### Email & Community
+- [Threads Email List Building Guide](https://threadstomillions.com/blog/email-list-building): Build an email list from Threads
+- [Threads to Newsletter Pipeline](https://threadstomillions.com/blog/newsletter-pipeline): Convert followers to subscribers
+- [Launch a Skool Community on Threads](https://threadstomillions.com/blog/skool-launch): Drive Skool members from Threads
+- [Threads for Business: Skool Growth](https://threadstomillions.com/blog/grow-skool-with-threads): 4-post funnel for Skool communities
 
 ## Contact
+
 - Email: hello@threadstomillions.com
-- Entity: Lexie Media LLC, Delaware
+- Threads: @getdigitalwithlexie
