@@ -3,6 +3,7 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
+  updatedDate?: string;
   readTime: string;
   category: string;
   keywords: string[];
@@ -1755,9 +1756,10 @@ The STAR Method is not a hack or a shortcut. It is a sustainable system for buil
   },
   {
     slug: 'threads-monetization-requirements',
-    title: 'Threads Monetization Requirements 2026: Program Status, Eligibility, and How Creators Actually Get Paid',
-    description: 'Updated for 2026. Threads monetization options, exact eligibility requirements, current program status, and the 4 income methods real creators use (3 need zero followers).',
+    title: 'Threads Monetization 2026: Requirements, Status & Pay',
+    description: 'Meta\'s bonus program is invite-only and US-limited. Here are the actual eligibility requirements, current program status, and 4 income methods creators use without waiting for an invite.',
     date: '2026-02-09',
+    updatedDate: '2026-04-15',
     readTime: '4 min read',
     category: 'Monetization',
     keywords: ['Threads monetization requirements', 'threads app monetization requirements 2026', 'how to monetize Threads', 'Threads creator program requirements', 'monetize Threads account 2026', 'threads monetization eligibility requirements 2026', 'threads app monetization status 2026'],
@@ -1819,9 +1821,10 @@ For a complete roadmap of every monetization model, see our [Threads monetizatio
   },
   {
     slug: 'threads-vs-x-2026',
-    title: 'Threads vs X in 2026: Which Platform Is Better for Creators?',
-    description: 'Threads vs X compared on reach, monetization, and audience quality. One platform is clearly better for creators in 2026. See which one wins.',
+    title: 'Threads vs X in 2026: Reach, Monetization & Audience Compared',
+    description: 'We compared Threads and X on organic reach, creator monetization, and audience quality. One platform is clearly better for building a business in 2026.',
     date: '2026-02-08',
+    updatedDate: '2026-04-15',
     readTime: '5 min read',
     category: 'Platform Strategy',
     keywords: ['Threads vs X 2026', 'Threads vs Twitter for creators', 'Threads or X', 'best platform for creators 2026'],
@@ -1967,9 +1970,10 @@ If you want the complete system, content templates, product launch playbooks, an
   },
   {
     slug: 'threads-app-guide-2026',
-    title: 'Threads App 2026: Complete Guide to Features, Algorithm Changes, and Creator Monetization',
-    description: 'The only Threads app guide you need for 2026. New algorithm rules, monetization features, and the exact steps to set up your profile and hit 1,000 followers fast.',
+    title: 'Threads App 2026: Features, Algorithm & Monetization Guide',
+    description: 'The only Threads guide you need for 2026. New algorithm rules, monetization features, and the exact steps to set up your profile and hit 1,000 followers fast.',
     date: '2026-02-08',
+    updatedDate: '2026-04-15',
     readTime: '5 min read',
     category: 'Getting Started',
     keywords: ['Threads app guide 2026', 'how to use Threads', 'Threads for beginners', 'Threads algorithm 2026'],
@@ -2120,9 +2124,10 @@ If you haven't set up your community yet, read our [Skool launch guide](/blog/sk
   },
   {
     slug: 'does-threads-pay-creators-2026',
-    title: 'Does Threads Pay Creators in 2026? Program Status, Earnings Data, and Better Alternatives',
-    description: 'Does Threads pay creators? Yes, but the bonus program pays less than you think. See real 2026 earnings data and the 3 income methods that pay 10x more.',
+    title: 'Does Threads Pay Creators in 2026? Real Earnings Data',
+    description: 'Yes, but the bonus program pays less than you think. See real earnings data per 1,000 views and the 3 income methods that pay 10x more without waiting for an invite.',
     date: '2026-02-08',
+    updatedDate: '2026-04-15',
     readTime: '4 min read',
     category: 'Monetization',
     keywords: ['does Threads pay creators', 'does threads pay creators 2026', 'Threads creator bonus 2026', 'Threads monetization program', 'Threads monetization program status 2026', 'Threads creator fund', 'threads monetization options for creators 2026'],
@@ -2330,9 +2335,10 @@ Use the updates. They are genuinely useful. But do not let feature exploration d
   },
   {
     slug: 'how-to-grow-on-threads-2026',
-    title: 'How to Grow on Threads 2026: The 0 to 10K Followers Playbook (Algorithm + Content Strategy)',
-    description: 'Proven Threads growth system for 2026. Algorithm tactics, posting schedule, engagement hacks, and the content strategy that took creators from 0 to 10K followers in 90 days.',
+    title: 'How to Grow on Threads in 2026: 0 to 10K Playbook',
+    description: 'The exact growth system that took creators from 0 to 10K Threads followers in 90 days. Algorithm tactics, posting schedule, and engagement strategy included.',
     date: '2026-03-08',
+    updatedDate: '2026-04-15',
     readTime: '9 min read',
     category: 'Growth',
     keywords: ['how to grow on threads', 'grow on threads 2026', 'threads followers', 'threads growth strategy', 'how to grow on threads fast', 'threads audience building'],
@@ -2769,9 +2775,10 @@ Threads is one of the most accessible platforms for organic growth in 2026. The 
   },
   {
     slug: 'how-to-get-paid-on-threads',
-    title: 'How to Get Paid on Threads 2026: Monetization Status, Views Needed, and 4 Income Methods',
-    description: 'Step-by-step guide to getting paid on Threads in 2026. Check your monetization status, see how many views you actually need, and the 4 ways creators earn $1K-$10K/month.',
+    title: 'How to Get Paid on Threads in 2026 (Real Numbers)',
+    description: 'Does Threads actually pay? How to check your monetization status in-app, the view counts that earn money, and 4 income methods creators use for $1K-$5K/month.',
     date: '2026-03-23',
+    updatedDate: '2026-04-15',
     readTime: '5 min read',
     category: 'Monetization',
     keywords: ['how to get paid on threads', 'how to get paid from threads app', 'threads monetization how many views', 'how to check monetization on threads', 'how to turn on monetization threads', 'do threads pay for views', 'threads monetization policy', 'is there monetization on threads', 'threads pay per 1000 views'],

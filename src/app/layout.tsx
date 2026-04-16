@@ -94,6 +94,8 @@ const jsonLd = {
       },
       sameAs: [
         'https://www.threads.net/@getdigitalwithlexie',
+        'https://www.skool.com/threads-to-millions',
+        'https://www.instagram.com/getdigitalwithlexie',
       ],
       description:
         'Threads to Millions is a community and course by Lexie teaching creators how to grow and monetize on the Threads social media platform using the proven STAR Method.',
@@ -126,6 +128,13 @@ const jsonLd = {
         name: 'Lexie',
         alternateName: 'getdigitalwithlexie',
         url: 'https://www.threads.net/@getdigitalwithlexie',
+        jobTitle: 'Threads Growth Strategist',
+        description: 'Creator who built a system for generating five-figure monthly revenue from Threads without paid ads, starting in August 2024.',
+        knowsAbout: ['Threads growth', 'Content monetization', 'STAR Method', 'Creator marketing', 'Digital product sales'],
+        sameAs: [
+          'https://www.threads.net/@getdigitalwithlexie',
+          'https://www.instagram.com/getdigitalwithlexie',
+        ],
       },
       inLanguage: 'en',
       educationalLevel: 'Beginner',
@@ -152,6 +161,17 @@ const jsonLd = {
         'Social media marketing',
       ],
       /* aggregateRating removed — add back only when backed by real review data */
+    },
+    {
+      '@type': 'DefinedTerm',
+      '@id': 'https://threadstomillions.com/#star-method',
+      name: 'STAR Method',
+      description: 'The STAR Method is a Threads content framework developed by Threads to Millions. S = Story First: post one credibility story daily (15 min). T = Teach for Free: publish one tactical framework post daily (20 min). A = 80/20 Engagement: spend 80% of engagement time on strategic replies (25 min). R = Sell in the Downthread: place your offer after value content, never before (5 min).',
+      inDefinedTermSet: {
+        '@type': 'DefinedTermSet',
+        name: 'Threads to Millions Glossary',
+        url: 'https://threadstomillions.com',
+      },
     },
     {
       '@type': 'FAQPage',

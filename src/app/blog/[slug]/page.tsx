@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: post.description,
       type: 'article',
       publishedTime: post.date,
+      modifiedTime: post.updatedDate ?? post.date,
       authors: ['Lexie (@getdigitalwithlexie)'],
       url: `https://threadstomillions.com/blog/${slug}`,
       siteName: 'Threads to Millions',
@@ -79,7 +80,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     headline: post.title,
     description: post.description,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updatedDate ?? post.date,
     author: {
       '@type': 'Person',
       name: 'Lexie',

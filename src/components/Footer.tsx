@@ -28,9 +28,9 @@ export const Footer = () => {
           <div>
             <h4 className="text-[12px] uppercase tracking-[0.2em] text-[hsl(var(--text))] font-semibold mb-6">Resources</h4>
             <ul className="space-y-4">
-              <li><Link href="#method" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">The STAR Method</Link></li>
-              <li><Link href="#results" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Results</Link></li>
-              <li><Link href="#curriculum" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Curriculum</Link></li>
+              <li><Link href="/#method" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">The STAR Method</Link></li>
+              <li><Link href="/#results" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Results</Link></li>
+              <li><Link href="/#curriculum" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Curriculum</Link></li>
               <li><Link href="/blog" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">All Articles</Link></li>
               <li><a href="https://luxetidestudio.com/transcriber" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Free Transcriber Tool</a></li>
             </ul>
@@ -40,8 +40,10 @@ export const Footer = () => {
             <h4 className="text-[12px] uppercase tracking-[0.2em] text-[hsl(var(--text))] font-semibold mb-6">Top Guides</h4>
             <ul className="space-y-4">
               <li><Link href="/blog/threads-monetization-requirements" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Monetization Requirements</Link></li>
+              <li><Link href="/blog/how-to-get-paid-on-threads" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">How to Get Paid on Threads</Link></li>
               <li><Link href="/blog/threads-monetization-blueprint-2026" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Monetization Blueprint</Link></li>
               <li><Link href="/blog/threads-app-guide-2026" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Threads Guide 2026</Link></li>
+              <li><Link href="/blog/threads-algorithm-reset-2026" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Algorithm Reset Guide</Link></li>
               <li><Link href="/blog/10-proven-hooks" className="text-[14px] text-[hsl(var(--muted-text))] hover:text-[hsl(var(--text))] transition-colors">Viral Hook Formulas</Link></li>
             </ul>
           </div>

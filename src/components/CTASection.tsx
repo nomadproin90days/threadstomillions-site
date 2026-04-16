@@ -16,7 +16,7 @@ export const CTASection = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src="/beach-hero.png"
-          alt=""
+          alt="Beach background for Threads to Millions call to action"
           fill
           className="object-cover"
           sizes="100vw"

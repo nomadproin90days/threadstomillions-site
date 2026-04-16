@@ -24,12 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/llms.txt`,
-      lastModified: new Date('2026-04-11'),
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
   ];
 
   // High-value blog posts get priority 0.9, others get 0.7
@@ -50,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.updatedDate ?? post.date),
     changeFrequency: 'monthly' as const,
     priority: highPriorityPosts.has(post.slug) ? 0.9 : 0.7,
   }));

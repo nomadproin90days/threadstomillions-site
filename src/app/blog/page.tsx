@@ -6,8 +6,8 @@ import Footer from '@/components/Footer';
 import { getAllPosts, BlogPost } from '@/lib/blog-data';
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Expert guides, strategies, and insights on growing and monetizing your Threads audience.',
+  title: 'Threads Growth & Monetization Guides 2026',
+  description: 'Free guides on how to grow followers, monetize your content, and use the Threads algorithm in 2026. Written by Lexie, creator of the Threads to Millions community.',
   alternates: {
     canonical: 'https://threadstomillions.com/blog',
   },

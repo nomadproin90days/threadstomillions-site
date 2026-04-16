@@ -29,7 +29,7 @@ export const WhoIsThisFor = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src="/beach-boardwalk.png"
-          alt=""
+          alt="Beach boardwalk background for Threads to Millions"
           fill
           className="object-cover opacity-15"
           sizes="100vw"

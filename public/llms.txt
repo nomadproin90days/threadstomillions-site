@@ -127,6 +127,10 @@ A free Threads account and a basic link or checkout setup. Optional tools like T
 - [Launch a Skool Community on Threads](https://threadstomillions.com/blog/skool-launch): Drive Skool members from Threads
 - [Threads for Business: Skool Growth](https://threadstomillions.com/blog/grow-skool-with-threads): 4-post funnel for Skool communities
 
+## Extended Content
+
+- [Full site content for AI systems](https://threadstomillions.com/llms-full.txt)
+
 ## Contact
 
 - Email: hello@threadstomillions.com

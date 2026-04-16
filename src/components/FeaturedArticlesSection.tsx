@@ -86,7 +86,7 @@ export const FeaturedArticlesSection = () => {
             <motion.div {...revealWithDelay(0.3)}>
               <Link href="/blog" className="group flex items-center justify-between glass-card p-6 hover:border-[hsl(var(--primary)/0.3)] transition-all duration-500">
                 <div>
-                  <div className="text-[15px] font-semibold text-[hsl(var(--text))] mb-1">Browse all 26 articles</div>
+                  <div className="text-[15px] font-semibold text-[hsl(var(--text))] mb-1">Browse all {posts.length} articles</div>
                   <div className="text-[13px] text-[hsl(var(--muted-text))]">Guides, playbooks, strategy</div>
                 </div>
                 <ArrowRight size={18} className="text-[hsl(var(--muted-text))] group-hover:text-[hsl(var(--primary))] transition-colors" />

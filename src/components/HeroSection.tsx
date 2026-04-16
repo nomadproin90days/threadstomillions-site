@@ -45,7 +45,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src="/beach-hero.png"
-          alt=""
+          alt="Beach background for Threads to Millions hero section"
           fill
           className="object-cover"
           priority
