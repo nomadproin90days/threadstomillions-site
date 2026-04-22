@@ -3665,7 +3665,7 @@ The best time to start an Instagram affiliate account was two years ago. The sec
       {
         question: 'Is high ticket affiliate marketing the same as MRR?',
         answer:
-          'No. High ticket affiliate marketing pays you commission for referring buyers to someone else’s product. MRR (Master Resell Rights) means you buy a digital product once and resell it yourself, keeping 100% per sale but owning refunds, support, and marketing. Affiliate marketing is lower risk with more predictable commission.',
+          'No. High ticket affiliate marketing pays you commission for referring buyers to someone else\'s product. MRR (Master Resell Rights) means you buy a digital product once and resell it yourself, keeping 100% per sale but owning refunds, support, and marketing. Affiliate marketing is lower risk with more predictable commission.',
       },
     ],
     content: `High ticket affiliate marketing is the model most people misunderstand. It is not a pyramid scheme, not a scam niche, and not a follower-count game. It is simply the math of promoting products that pay $100+ per sale instead of $1.
