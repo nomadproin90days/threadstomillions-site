@@ -40,6 +40,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'star-method-explained',
     'threads-followers-to-make-money',
     'threads-app-guide-2026',
+    'affiliate-marketing-on-pinterest',
+    'affiliate-marketing-instagram',
+    'high-ticket-affiliate-marketing',
+    'best-affiliate-marketing-platforms-2026',
   ]);
 
   const blogPages: MetadataRoute.Sitemap = posts.map((post) => ({
