@@ -8,6 +8,7 @@ import { getAllSlugs, getAllPosts, getPostBySlug } from '@/lib/blog-data';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AffiliateCTA from '@/components/AffiliateCTA';
+import BlogFAQSection from '@/components/BlogFAQSection';
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -204,6 +205,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             </>
           );
         })()}
+
+          {post.faqSchema && post.faqSchema.length > 0 && (
+            <BlogFAQSection faqs={post.faqSchema} />
+          )}
 
           <AffiliateCTA variant="end" />
         </div>
