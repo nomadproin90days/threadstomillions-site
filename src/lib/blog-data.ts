@@ -8,6 +8,12 @@ export interface HowToStep {
   text: string;
 }
 
+export interface InlineCta {
+  headline?: string;
+  body?: string;
+  buttonText?: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -20,6 +26,7 @@ export interface BlogPost {
   content: string;
   faqSchema?: FAQItem[];
   howToSteps?: HowToStep[];
+  inlineCta?: InlineCta;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -1792,6 +1799,11 @@ The STAR Method is not a hack or a shortcut. It is a sustainable system for buil
     updatedDate: '2026-04-23',
     readTime: '4 min read',
     category: 'Monetization',
+    inlineCta: {
+      headline: 'Don\'t wait on Meta\'s invite',
+      body: 'Meta\'s bonus program is restrictive and most creators earn under $100/month from it. The Threads to Millions community teaches the 4 income methods that actually pay, starting from zero followers.',
+      buttonText: 'See the 4 methods',
+    },
     keywords: ['Threads monetization requirements', 'threads app monetization requirements 2026', 'how to monetize Threads', 'Threads creator program requirements', 'monetize Threads account 2026', 'threads monetization eligibility requirements 2026', 'threads app monetization status 2026'],
     content: `When creators ask about Threads monetization requirements, they are usually asking two different questions without realizing it. The first is: what does Meta require to access their creator bonus program? The second is: what do I actually need to start making money through Threads?
 
@@ -1857,6 +1869,11 @@ For a complete roadmap of every monetization model, see our [Threads monetizatio
     updatedDate: '2026-04-23',
     readTime: '5 min read',
     category: 'Platform Strategy',
+    inlineCta: {
+      headline: 'Going all-in on Threads?',
+      body: 'Threads to Millions is where 5,200+ creators learn the exact system for turning Threads content into real income. Content frameworks, monetization playbooks, and daily support from people building alongside you.',
+      buttonText: 'Join the community',
+    },
     keywords: ['Threads vs X 2026', 'Threads vs Twitter for creators', 'Threads or X', 'best platform for creators 2026'],
     content: `The Threads versus X debate is one of the most common strategic questions among creators right now. Both platforms are text-first social networks built for conversation and ideas. Both have significant user bases. But they are fundamentally different places to build a business, and the right choice depends heavily on who you are trying to reach and how you plan to monetize.
 
@@ -2017,6 +2034,11 @@ If you want the complete system, content templates, product launch playbooks, an
     updatedDate: '2026-04-23',
     readTime: '5 min read',
     category: 'Getting Started',
+    inlineCta: {
+      headline: 'New to Threads? Skip the learning curve',
+      body: 'The Threads to Millions community walks you through every step from download to your first 1,000 followers, with daily accountability and 5,200+ creators building alongside you.',
+      buttonText: 'Start with the playbook',
+    },
     keywords: ['Threads app guide 2026', 'how to use Threads', 'Threads for beginners', 'Threads algorithm 2026'],
     content: `Threads launched in 2023 as Meta's answer to Twitter, and by 2026 it has become one of the most creator-friendly platforms for building an audience and a business. If you are just getting started, or if you have been posting inconsistently and want to approach it more strategically, this guide covers everything you need to know.
 
@@ -2171,6 +2193,11 @@ If you haven't set up your community yet, read our [Skool launch guide](/blog/sk
     updatedDate: '2026-04-23',
     readTime: '4 min read',
     category: 'Monetization',
+    inlineCta: {
+      headline: 'Meta pays pennies. Here\'s what pays real money',
+      body: 'Most creators earn under $100/month from Meta\'s bonus program. The ones earning $1K-$5K are selling their own digital products, coaching, and memberships. Threads to Millions teaches all four.',
+      buttonText: 'See the system',
+    },
     keywords: ['does Threads pay creators', 'does threads pay creators 2026', 'Threads creator bonus 2026', 'Threads monetization program', 'Threads monetization program status 2026', 'Threads creator fund', 'threads monetization options for creators 2026'],
     content: `One of the most common questions from new Threads creators is whether Meta pays them directly for their content. It is a fair question. Twitter built its creator economy partly on ad revenue sharing, and YouTube's partner program has made direct platform payments a standard expectation for content creators. So where does Threads stand?
 
@@ -2382,6 +2409,11 @@ Use the updates. They are genuinely useful. But do not let feature exploration d
     updatedDate: '2026-04-23',
     readTime: '9 min read',
     category: 'Growth',
+    inlineCta: {
+      headline: 'Want the 0-to-10K system without the trial and error?',
+      body: 'Threads to Millions gives you the exact posting schedule, content templates, full hook library, and daily accountability 5,200+ creators use to hit their first 10K followers.',
+      buttonText: 'See the playbook',
+    },
     keywords: ['how to grow on threads', 'grow on threads 2026', 'threads followers', 'threads growth strategy', 'how to grow on threads fast', 'threads audience building'],
     content: `Threads has over 400 million monthly active users and is still in its growth phase. That means the algorithm is actively looking for new creators to promote. If you have been waiting for the right time to start building an audience, this is it.
 
@@ -2848,6 +2880,11 @@ Threads is one of the most accessible platforms for organic growth in 2026. The 
     updatedDate: '2026-04-23',
     readTime: '5 min read',
     category: 'Monetization',
+    inlineCta: {
+      headline: 'The 90-day plan to your first $1K',
+      body: 'Week 1-4 post daily. Week 5-8 build your offer. Week 9-12 launch. Threads to Millions gives you the exact templates, launch scripts, and daily accountability to make it happen.',
+      buttonText: 'Get the 90-day plan',
+    },
     howToSteps: [
       { name: 'Check Your Monetization Status', text: 'Open the Threads app, go to your profile, tap the menu icon, and look for Monetization or Creator tools in settings to view your eligibility status.' },
       { name: 'Switch to a Professional Account', text: 'Go to Settings, then Account, then switch to a Professional or Creator account. This is free and does not change how your profile looks.' },

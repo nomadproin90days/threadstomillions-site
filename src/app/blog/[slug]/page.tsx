@@ -195,7 +195,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 </ReactMarkdown>
               </div>
 
-              <AffiliateCTA variant="inline" />
+              <AffiliateCTA
+                variant="inline"
+                headline={post.inlineCta?.headline}
+                body={post.inlineCta?.body}
+                buttonText={post.inlineCta?.buttonText}
+              />
 
               <div className="prose prose-lg max-w-none prose-trust prose-headings:font-heading prose-headings:tracking-tight prose-a:text-[hsl(var(--primary))] hover:prose-a:text-[hsl(var(--primary-hover))] prose-strong:text-[hsl(var(--text))]">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>
